@@ -165,10 +165,6 @@ class JsonFormatter extends NormalizerFormatter
             return $this->normalizeException($data);
         }
 
-        if (is_resource($data)) {
-            return parent::normalize($data);
-        }
-
         return $data;
     }
 
