@@ -21,4 +21,7 @@ Route::group([
     // 博客文章分类
     $router->resource('category', CategoryController::class);
 
+    // 博客文章浏览记录
+    $router->resource('article-statics', ArticleStaticsController::class);
+
 });

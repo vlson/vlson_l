@@ -2,20 +2,20 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\Blog\BlogCategoryModel;
+use App\Models\Blog\BlogArticleStaticsModel;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-class CategoryController extends AdminController
+class ArticleStaticsController extends AdminController
 {
     /**
      * Title for current resource.
      *
      * @var string
      */
-    protected $title = '博客分类';
+    protected $title = '文章浏览统计';
 
     /**
      * Make a grid builder.
@@ -24,13 +24,12 @@ class CategoryController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new BlogCategoryModel());
+        $grid = new Grid(new BlogArticleStaticsModel());
 
         $grid->column('id', __('Id'));
-        $grid->column('cat_name', __('分类名称'));
-        $grid->column('logo', __('分类LOGO'));
-        $grid->column('parent_id', __('父级分类'));
-        $grid->column('level', __('分类级别'));
+        $grid->column('type', __('类型'));
+        $grid->column('art_id', __('文章ID'));
+        $grid->column('ip', __('客户端Ip'));
         $grid->column('is_deleted', __('是否删除'));
         $grid->column('created_at', __('创建时间'));
         $grid->column('updated_at', __('更新时间'));
@@ -46,13 +45,12 @@ class CategoryController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(BlogCategoryModel::findOrFail($id));
+        $show = new Show(BlogArticleStaticsModel::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('cat_name', __('分类名称'));
-        $show->field('logo', __('分类LOGO'));
-        $show->field('parent_id', __('父级分类'));
-        $show->field('level', __('分类级别'));
+        $show->field('type', __('类型'));
+        $show->field('art_id', __('文章ID'));
+        $show->field('ip', __('客户端Ip'));
         $show->field('is_deleted', __('是否删除'));
         $show->field('created_at', __('创建时间'));
         $show->field('updated_at', __('更新时间'));
@@ -67,12 +65,11 @@ class CategoryController extends AdminController
      */
     protected function form()
     {
-        $form = new Form(new BlogCategoryModel());
+        $form = new Form(new BlogArticleStaticsModel());
 
-        $form->text('cat_name', __('分类名称'));
-        $form->text('logo', __('分类LOGO'));
-        $form->number('parent_id', __('父级分类'));
-        $form->switch('level', __('分类级别'));
+        $form->text('type', __('类型'));
+        $form->number('art_id', __('文章ID'));
+        $form->ip('ip', __('客户端Ip'))->default('0.0.0.0');
         $form->switch('is_deleted', __('是否删除'))->default(1);
 
         return $form;
