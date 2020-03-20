@@ -12,4 +12,13 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('admin.home');
 
+    // 博客文章
+    $router->resource('article', ArticleController::class);
+
+    // 博客文章标签
+    $router->resource('label', LabelController::class);
+
+    // 博客文章分类
+    $router->resource('category', CategoryController::class);
+
 });
