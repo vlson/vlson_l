@@ -84,7 +84,6 @@ class CategoryController extends AdminController
         $form->image('logo', __('分类LOGO'));
         $form->select('parent_id', __('父级分类'))->options($cat_arr)->required();
         $form->switch('is_deleted', __('是否删除'))->default(0);
-        $form->hidden('level')->value(0);
 
         return $form;
     }
@@ -95,6 +94,7 @@ class CategoryController extends AdminController
      * @return mixed|void
      */
     public function store(){
+        // 获取form表单提交数据
         $form_param = \request()->all();
 
         $parent_level = BlogCategoryModel::query()->where(['id'=>$form_param['parent_id'], 'is_deleted'=>NOT_DELETED])->value('level');
