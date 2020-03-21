@@ -20,7 +20,7 @@ class CreateBlogCategoryTable extends Migration
             $table->string('logo', 100)->default('')->nullable(false)->comment('分类logo');
             $table->unsignedBigInteger('parent_id')->default(0)->nullable(false)->comment('父级分类ID');
             $table->unsignedTinyInteger('level')->default(0)->nullable(false)->comment('分类级别');
-            $table->unsignedTinyInteger('is_deleted')->default(1)->nullable(false)->comment('软删除标识：1正常，2已删除');
+            $table->unsignedTinyInteger('is_deleted')->default(0)->nullable(false)->comment('软删除标识：0正常，1已删除');
 
             $table->timestamps();
         });

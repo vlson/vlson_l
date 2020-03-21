@@ -175,6 +175,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * 阿里云OSS
+         * */
+        \Jacobcyl\AliOSS\AliOssServiceProvider::class
+
     ],
 
     /*

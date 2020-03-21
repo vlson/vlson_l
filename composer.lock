@@ -4,86 +4,33 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4e9afb85e1c54f1213390d6b4c87c1b1",
+    "content-hash": "18310ae0c72c4a105cc08c39e5b5f9a7",
     "packages": [
         {
-            "name": "almasaeed2010/adminlte",
-            "version": "v2.4.3",
+            "name": "aliyuncs/oss-sdk-php",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ColorlibHQ/AdminLTE.git",
-                "reference": "b3acb63ac56b13eb45b36e628b384a9a2507b50e"
+                "url": "https://github.com/aliyun/aliyun-oss-php-sdk.git",
+                "reference": "053d7ba9e798e4c09b9c5c1edab153d25ea9643a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ColorlibHQ/AdminLTE/zipball/b3acb63ac56b13eb45b36e628b384a9a2507b50e",
-                "reference": "b3acb63ac56b13eb45b36e628b384a9a2507b50e",
+                "url": "https://api.github.com/repos/aliyun/aliyun-oss-php-sdk/zipball/053d7ba9e798e4c09b9c5c1edab153d25ea9643a",
+                "reference": "053d7ba9e798e4c09b9c5c1edab153d25ea9643a",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "1.*"
-            },
-            "type": "template",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Abdullah Almsaeed",
-                    "email": "abdullah@almsaeedstudio.com"
-                }
-            ],
-            "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
-            "homepage": "https://adminlte.io/",
-            "keywords": [
-                "JS",
-                "admin",
-                "back-end",
-                "css",
-                "less",
-                "responsive",
-                "template",
-                "theme",
-                "web"
-            ],
-            "time": "2018-02-04T12:54:57+00:00"
-        },
-        {
-            "name": "composer/installers",
-            "version": "v1.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/installers.git",
-                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
-                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
+                "php": ">=5.3"
             },
             "require-dev": {
-                "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "^4.8.36"
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~1.0"
             },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Composer\\Installers\\Plugin",
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
+            "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Composer\\Installers\\": "src/Composer/Installers"
+                    "OSS\\": "src/OSS"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -92,86 +39,13 @@
             ],
             "authors": [
                 {
-                    "name": "Kyle Robinson Young",
-                    "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama"
+                    "name": "Aliyuncs",
+                    "homepage": "http://www.aliyun.com"
                 }
             ],
-            "description": "A multi-framework Composer library installer",
-            "homepage": "https://composer.github.io/installers/",
-            "keywords": [
-                "Craft",
-                "Dolibarr",
-                "Eliasis",
-                "Hurad",
-                "ImageCMS",
-                "Kanboard",
-                "Lan Management System",
-                "MODX Evo",
-                "MantisBT",
-                "Mautic",
-                "Maya",
-                "OXID",
-                "Plentymarkets",
-                "Porto",
-                "RadPHP",
-                "SMF",
-                "Thelia",
-                "Whmcs",
-                "WolfCMS",
-                "agl",
-                "aimeos",
-                "annotatecms",
-                "attogram",
-                "bitrix",
-                "cakephp",
-                "chef",
-                "cockpit",
-                "codeigniter",
-                "concrete5",
-                "croogo",
-                "dokuwiki",
-                "drupal",
-                "eZ Platform",
-                "elgg",
-                "expressionengine",
-                "fuelphp",
-                "grav",
-                "installer",
-                "itop",
-                "joomla",
-                "known",
-                "kohana",
-                "laravel",
-                "lavalite",
-                "lithium",
-                "magento",
-                "majima",
-                "mako",
-                "mediawiki",
-                "modulework",
-                "modx",
-                "moodle",
-                "osclass",
-                "phpbb",
-                "piwik",
-                "ppi",
-                "puppet",
-                "pxcms",
-                "reindex",
-                "roundcube",
-                "shopware",
-                "silverstripe",
-                "sydes",
-                "sylius",
-                "symfony",
-                "typo3",
-                "wordpress",
-                "yawik",
-                "zend",
-                "zikula"
-            ],
-            "time": "2020-02-07T10:39:20+00:00"
+            "description": "Aliyun OSS SDK for PHP",
+            "homepage": "http://www.aliyun.com/product/oss/",
+            "time": "2019-11-15T11:05:42+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -865,6 +739,57 @@
                 "trusted proxy"
             ],
             "time": "2019-09-03T16:45:42+00:00"
+        },
+        {
+            "name": "jacobcyl/ali-oss-storage",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jacobcyl/Aliyun-oss-storage.git",
+                "reference": "c0cb9ba1d3faf22a1e04a03602aac90a187b5959"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jacobcyl/Aliyun-oss-storage/zipball/c0cb9ba1d3faf22a1e04a03602aac90a187b5959",
+                "reference": "c0cb9ba1d3faf22a1e04a03602aac90a187b5959",
+                "shasum": ""
+            },
+            "require": {
+                "aliyuncs/oss-sdk-php": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Jacobcyl\\AliOSS\\AliOssServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jacobcyl\\AliOSS\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "jacobcyl",
+                    "email": "cyl.jacob@gmail.com"
+                }
+            ],
+            "description": "aliyun oss filesystem storage for laravel 5+",
+            "homepage": "http://jacobcyl.github.io/Aliyun-oss-storage/",
+            "keywords": [
+                "aliyun",
+                "filesystems",
+                "laravel",
+                "oss",
+                "storage"
+            ],
+            "time": "2018-04-02T03:44:01+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -3529,6 +3454,49 @@
     ],
     "packages-dev": [
         {
+            "name": "almasaeed2010/adminlte",
+            "version": "v2.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ColorlibHQ/AdminLTE.git",
+                "reference": "b3acb63ac56b13eb45b36e628b384a9a2507b50e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ColorlibHQ/AdminLTE/zipball/b3acb63ac56b13eb45b36e628b384a9a2507b50e",
+                "reference": "b3acb63ac56b13eb45b36e628b384a9a2507b50e",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "1.*"
+            },
+            "type": "template",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abdullah Almsaeed",
+                    "email": "abdullah@almsaeedstudio.com"
+                }
+            ],
+            "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
+            "homepage": "https://adminlte.io/",
+            "keywords": [
+                "JS",
+                "admin",
+                "back-end",
+                "css",
+                "less",
+                "responsive",
+                "template",
+                "theme",
+                "web"
+            ],
+            "time": "2018-02-04T12:54:57+00:00"
+        },
+        {
             "name": "beyondcode/laravel-dump-server",
             "version": "1.3.0",
             "source": {
@@ -3538,7 +3506,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/beyondcode/laravel-dump-server/zipball/fcc88fa66895f8c1ff83f6145a5eff5fa2a0739a",
+                "url": "https://api.github.com/repos/beyondcode/laravel-dump-server/zipball/fcc88fa66895f8c1ff83f6145a5eff5fa2a0739a",
                 "reference": "fcc88fa66895f8c1ff83f6145a5eff5fa2a0739a",
                 "shasum": ""
             },
@@ -3590,6 +3558,130 @@
             "time": "2019-08-11T13:17:40+00:00"
         },
         {
+            "name": "composer/installers",
+            "version": "v1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
+                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "MantisBT",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Thelia",
+                "Whmcs",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "joomla",
+                "known",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "mediawiki",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "sylius",
+                "symfony",
+                "typo3",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "time": "2020-02-07T10:39:20+00:00"
+        },
+        {
             "name": "doctrine/instantiator",
             "version": "1.3.0",
             "source": {
@@ -3599,7 +3691,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/doctrine/instantiator/zipball/ae466f726242e637cebdd526a7d991b9433bacf1",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/ae466f726242e637cebdd526a7d991b9433bacf1",
                 "reference": "ae466f726242e637cebdd526a7d991b9433bacf1",
                 "shasum": ""
             },
@@ -3716,7 +3808,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
                 "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
                 "shasum": ""
             },
@@ -3766,7 +3858,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/hamcrest/hamcrest-php/zipball/776503d3a8e85d4f9a1148614f95b7a608b046ad",
+                "url": "https://api.github.com/repos/hamcrest/hamcrest-php/zipball/776503d3a8e85d4f9a1148614f95b7a608b046ad",
                 "reference": "776503d3a8e85d4f9a1148614f95b7a608b046ad",
                 "shasum": ""
             },
@@ -3928,7 +4020,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/nunomaduro/collision/zipball/af42d339fe2742295a54f6fdd42aaa6f8c4aca68",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/af42d339fe2742295a54f6fdd42aaa6f8c4aca68",
                 "reference": "af42d339fe2742295a54f6fdd42aaa6f8c4aca68",
                 "shasum": ""
             },
@@ -3992,7 +4084,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/phar-io/manifest/zipball/7761fcacf03b4d4f16e7ccb606d4879ca431fcf4",
+                "url": "https://api.github.com/repos/phar-io/manifest/zipball/7761fcacf03b4d4f16e7ccb606d4879ca431fcf4",
                 "reference": "7761fcacf03b4d4f16e7ccb606d4879ca431fcf4",
                 "shasum": ""
             },
@@ -4047,7 +4139,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/phar-io/version/zipball/45a2ec53a73c70ce41d55cedef9063630abaf1b6",
+                "url": "https://api.github.com/repos/phar-io/version/zipball/45a2ec53a73c70ce41d55cedef9063630abaf1b6",
                 "reference": "45a2ec53a73c70ce41d55cedef9063630abaf1b6",
                 "shasum": ""
             },
@@ -4094,7 +4186,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/phpDocumentor/ReflectionCommon/zipball/63a995caa1ca9e5590304cd845c15ad6d482a62a",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/63a995caa1ca9e5590304cd845c15ad6d482a62a",
                 "reference": "63a995caa1ca9e5590304cd845c15ad6d482a62a",
                 "shasum": ""
             },
@@ -4307,7 +4399,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/php-code-coverage/zipball/807e6013b00af69b6c5d9ceb4282d0393dbb9d8d",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/807e6013b00af69b6c5d9ceb4282d0393dbb9d8d",
                 "reference": "807e6013b00af69b6c5d9ceb4282d0393dbb9d8d",
                 "shasum": ""
             },
@@ -4370,7 +4462,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/php-file-iterator/zipball/050bedf145a257b1ff02746c31894800e5122946",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/050bedf145a257b1ff02746c31894800e5122946",
                 "reference": "050bedf145a257b1ff02746c31894800e5122946",
                 "shasum": ""
             },
@@ -4420,7 +4512,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/php-text-template/zipball/31f8b717e51d9a2afca6c9f046f5d69fc27c8686",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-text-template/zipball/31f8b717e51d9a2afca6c9f046f5d69fc27c8686",
                 "reference": "31f8b717e51d9a2afca6c9f046f5d69fc27c8686",
                 "shasum": ""
             },
@@ -4461,7 +4553,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/php-timer/zipball/1038454804406b0b5f5f520358e78c1c2f71501e",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/1038454804406b0b5f5f520358e78c1c2f71501e",
                 "reference": "1038454804406b0b5f5f520358e78c1c2f71501e",
                 "shasum": ""
             },
@@ -4510,7 +4602,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/php-token-stream/zipball/995192df77f63a59e47f025390d2d1fdf8f425ff",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/995192df77f63a59e47f025390d2d1fdf8f425ff",
                 "reference": "995192df77f63a59e47f025390d2d1fdf8f425ff",
                 "shasum": ""
             },
@@ -4643,7 +4735,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/code-unit-reverse-lookup/zipball/4419fcdb5eabb9caa61a27c7a1db532a6b55dd18",
+                "url": "https://api.github.com/repos/sebastianbergmann/code-unit-reverse-lookup/zipball/4419fcdb5eabb9caa61a27c7a1db532a6b55dd18",
                 "reference": "4419fcdb5eabb9caa61a27c7a1db532a6b55dd18",
                 "shasum": ""
             },
@@ -4688,7 +4780,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/comparator/zipball/5de4fc177adf9bce8df98d8d141a7559d7ccf6da",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/5de4fc177adf9bce8df98d8d141a7559d7ccf6da",
                 "reference": "5de4fc177adf9bce8df98d8d141a7559d7ccf6da",
                 "shasum": ""
             },
@@ -4752,7 +4844,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/diff/zipball/720fcc7e9b5cf384ea68d9d930d480907a0c1a29",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/720fcc7e9b5cf384ea68d9d930d480907a0c1a29",
                 "reference": "720fcc7e9b5cf384ea68d9d930d480907a0c1a29",
                 "shasum": ""
             },
@@ -4808,7 +4900,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/environment/zipball/464c90d7bdf5ad4e8a6aea15c091fec0603d4368",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/464c90d7bdf5ad4e8a6aea15c091fec0603d4368",
                 "reference": "464c90d7bdf5ad4e8a6aea15c091fec0603d4368",
                 "shasum": ""
             },
@@ -4861,7 +4953,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/exporter/zipball/68609e1261d215ea5b21b7987539cbfbe156ec3e",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/68609e1261d215ea5b21b7987539cbfbe156ec3e",
                 "reference": "68609e1261d215ea5b21b7987539cbfbe156ec3e",
                 "shasum": ""
             },
@@ -4928,7 +5020,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/global-state/zipball/e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4",
                 "reference": "e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4",
                 "shasum": ""
             },
@@ -4979,7 +5071,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/object-enumerator/zipball/7cfd9e65d11ffb5af41198476395774d4c8a84c5",
+                "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/7cfd9e65d11ffb5af41198476395774d4c8a84c5",
                 "reference": "7cfd9e65d11ffb5af41198476395774d4c8a84c5",
                 "shasum": ""
             },
@@ -5026,7 +5118,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/object-reflector/zipball/773f97c67f28de00d397be301821b06708fca0be",
+                "url": "https://api.github.com/repos/sebastianbergmann/object-reflector/zipball/773f97c67f28de00d397be301821b06708fca0be",
                 "reference": "773f97c67f28de00d397be301821b06708fca0be",
                 "shasum": ""
             },
@@ -5071,7 +5163,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/recursion-context/zipball/5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8",
                 "reference": "5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8",
                 "shasum": ""
             },
@@ -5124,7 +5216,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/resource-operations/zipball/4d7a795d35b889bf80a0cc04e08d77cedfa917a9",
+                "url": "https://api.github.com/repos/sebastianbergmann/resource-operations/zipball/4d7a795d35b889bf80a0cc04e08d77cedfa917a9",
                 "reference": "4d7a795d35b889bf80a0cc04e08d77cedfa917a9",
                 "shasum": ""
             },
@@ -5166,7 +5258,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/sebastianbergmann/version/zipball/99732be0ddb3361e16ad77b68ba41efc8e979019",
+                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/99732be0ddb3361e16ad77b68ba41efc8e979019",
                 "reference": "99732be0ddb3361e16ad77b68ba41efc8e979019",
                 "shasum": ""
             },
@@ -5209,7 +5301,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/theseer/tokenizer/zipball/11336f6f84e16a720dae9d8e6ed5019efa85a0f9",
+                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/11336f6f84e16a720dae9d8e6ed5019efa85a0f9",
                 "reference": "11336f6f84e16a720dae9d8e6ed5019efa85a0f9",
                 "shasum": ""
             },

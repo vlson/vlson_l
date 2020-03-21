@@ -18,7 +18,7 @@ class CreateBlogArticleCategoryTable extends Migration
 
             $table->unsignedBigInteger('art_id')->default(0)->nullable(false)->comment('文章ID');
             $table->unsignedBigInteger('cat_id')->default(0)->nullable(false)->comment('分类ID');
-            $table->unsignedTinyInteger('is_deleted')->default(1)->nullable(false)->comment('软删除标识：1正常，2已删除');
+            $table->unsignedTinyInteger('is_deleted')->default(0)->nullable(false)->comment('软删除标识：0正常，1已删除');
 
             $table->timestamps();
         });

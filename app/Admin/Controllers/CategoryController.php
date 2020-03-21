@@ -3,10 +3,14 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Blog\BlogCategoryModel;
+use App\Models\Blog\BlogLabelModel;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
+use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends AdminController
 {
@@ -69,12 +73,35 @@ class CategoryController extends AdminController
     {
         $form = new Form(new BlogCategoryModel());
 
-        $form->text('cat_name', __('分类名称'));
-        $form->text('logo', __('分类LOGO'));
-        $form->number('parent_id', __('父级分类'));
-        $form->switch('level', __('分类级别'));
-        $form->switch('is_deleted', __('是否删除'))->default(1);
+        // 查询父级分类列表
+        $cat_list = BlogCategoryModel::query()->where('level', '<=', 3)
+            ->where(['is_deleted'=>NOT_DELETED])
+            ->select(['id', 'cat_name'])
+            ->get()->keyBy('id');
+        $cat_arr = array_column($cat_list->toArray(), 'cat_name', 'id');
+
+        $form->text('cat_name', __('分类名称'))->required();
+        $form->image('logo', __('分类LOGO'));
+        $form->select('parent_id', __('父级分类'))->options($cat_arr)->required();
+        $form->switch('is_deleted', __('是否删除'))->default(0);
+        $form->hidden('level')->value(0);
 
         return $form;
+    }
+
+    /**
+     * Notes：重写添加分类方法
+     * Created by lxj 2020/3/21 15:47
+     * @return mixed|void
+     */
+    public function store(){
+        $form_param = \request()->all();
+
+        $parent_level = BlogCategoryModel::query()->where(['id'=>$form_param['parent_id'], 'is_deleted'=>NOT_DELETED])->value('level');
+
+
+
+        \request()->get('level', $parent_level+1);
+        dd(\request()->all());
     }
 }

@@ -17,7 +17,7 @@ class CreateBlogLabelTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('label_name', 20)->default('')->nullable(false)->comment('标签名称');
-            $table->unsignedTinyInteger('is_deleted')->default(1)->nullable(false)->comment('软删除标识：1正常，2已删除');
+            $table->unsignedTinyInteger('is_deleted')->default(0)->nullable(false)->comment('软删除标识：0正常，1已删除');
 
             $table->timestamps();
         });
