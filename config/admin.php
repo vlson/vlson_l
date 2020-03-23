@@ -158,8 +158,8 @@ return [
 
         // Image and file upload path under the disk above.
         'directory' => [
-            'image' => 'images',
-            'file'  => 'files',
+            'image' => 'vlson_l/images',
+            'file'  => 'vlson_l/files',
         ],
     ],
 
