@@ -2,9 +2,14 @@
 
 namespace App\Models\Blog;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\BasicModel;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class BlogCategoryModel extends Model
+class BlogCategoryModel extends BasicModel
 {
+    use SoftDeletes;
+
     protected $table = 'blog_category';
+
+    protected $dates = ['deleted_at'];
 }

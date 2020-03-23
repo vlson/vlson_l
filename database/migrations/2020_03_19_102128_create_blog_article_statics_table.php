@@ -19,8 +19,8 @@ class CreateBlogArticleStaticsTable extends Migration
             $table->string('type', 20)->default('')->nullable(false)->comment('统计类型：点赞，阅读');
             $table->unsignedBigInteger('art_id')->default(0)->nullable(false)->comment('文章ID');
             $table->string('ip', 25)->default('0.0.0.0')->nullable(false)->comment('客户端IP');
-            $table->unsignedTinyInteger('is_deleted')->default(0)->nullable(false)->comment('软删除标识：0正常，1已删除');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -2,9 +2,9 @@
 
 namespace App\Models\Blog;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\BasicModel;
 
-class BlogArticleModel extends Model
+class BlogArticleModel extends BasicModel
 {
     protected $table = 'blog_article';
 }

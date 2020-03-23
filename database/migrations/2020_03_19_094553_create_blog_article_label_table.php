@@ -18,8 +18,8 @@ class CreateBlogArticleLabelTable extends Migration
 
             $table->unsignedBigInteger('art_id')->default(0)->nullable(false)->comment('文章ID');
             $table->unsignedBigInteger('label_id')->default(0)->nullable(false)->comment('标签ID');
-            $table->unsignedTinyInteger('is_deleted')->default(0)->nullable(false)->comment('软删除标识：0正常，1已删除');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

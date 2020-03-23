@@ -23,8 +23,8 @@ class CreateBlogArticleTable extends Migration
             $table->longText('content')->default('')->nullable(false)->comment('内容');
             $table->unsignedTinyInteger('like_num')->default(0)->nullable(false)->comment('点赞量');
             $table->unsignedTinyInteger('read_num')->default(0)->nullable(false)->comment('阅读量');
-            $table->unsignedTinyInteger('is_deleted')->default(0)->nullable(false)->comment('软删除标识：0正常，1已删除');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }
