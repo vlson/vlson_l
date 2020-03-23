@@ -74,16 +74,17 @@ class CategoryController extends AdminController
         $form = new Form(new BlogCategoryModel());
 
         // 查询父级分类列表
-        $cat_list = BlogCategoryModel::query()->where('level', '<=', 3)
+        $cat_list = BlogCategoryModel::query()->where('level', '<', 3)
             ->where(['is_deleted'=>NOT_DELETED])
             ->select(['id', 'cat_name'])
             ->get()->keyBy('id');
         $cat_arr = array_column($cat_list->toArray(), 'cat_name', 'id');
 
         $form->text('cat_name', __('分类名称'))->required();
-        $form->image('logo', __('分类LOGO'))->default('vlson_l/分类LOGO.png');
+        $form->image('logo', __('分类LOGO'))->default('vlson_l/images/分类LOGO.png');
         $form->select('parent_id', __('父级分类'))->options($cat_arr)->required();
         $form->switch('is_deleted', __('是否删除'))->default(0);
+        $form->hidden('level', __('分类级别'))->default(1);
 
         return $form;
     }
@@ -93,15 +94,13 @@ class CategoryController extends AdminController
      * Created by lxj 2020/3/21 15:47
      * @return mixed|void
      */
-    /*public function store(){
+    public function store(){
         // 获取form表单提交数据
         $form_param = \request()->all();
 
         $parent_level = BlogCategoryModel::query()->where(['id'=>$form_param['parent_id'], 'is_deleted'=>NOT_DELETED])->value('level');
+        \request()->offsetSet('level', $parent_level+1);
 
-
-
-        \request()->get('level', $parent_level+1);
-        dd(\request()->all());
-    }*/
+        return $this->form()->store();
+    }
 }
