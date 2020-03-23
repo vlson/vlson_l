@@ -3,15 +3,12 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Blog\BlogCategoryModel;
-use App\Models\Blog\BlogLabelModel;
+use Encore\Admin\Actions\BatchRestore;
 use Encore\Admin\Actions\Restore;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends AdminController
 {
@@ -43,10 +40,19 @@ class CategoryController extends AdminController
         $grid->column('updated_at', __('更新时间'));
         $grid->column('deleted_at', __('删除时间'));
 
+        // 回收站恢复数据
         $grid->actions(function($actions){
             if (\request('_scope_') == 'trashed') {
                 $actions->add(new Restore());
             }
+        });
+
+        // 回收站批量恢复数据
+        $grid->batchActions(function ($batch) {
+            if (\request('_scope_') == 'trashed') {
+                $batch->add(new BatchRestore());
+            }
+
         });
 
         return $grid;
