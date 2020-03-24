@@ -108,15 +108,9 @@ class CategoryController extends AdminController
     {
         $form = new Form(new BlogCategoryModel());
 
-        // 查询父级分类列表
-        $cat_list = BlogCategoryModel::withoutTrashed()->where('level', '<', 3)
-            ->select(['id', 'cat_name'])
-            ->get()->keyBy('id');
-        $cat_arr = array_column($cat_list->toArray(), 'cat_name', 'id');
-
         $form->text('cat_name', __('分类名称'))->required();
-        $form->image('logo', __('分类LOGO'))->default('vlson_l/images/分类LOGO.png');
-        $form->select('parent_id', __('父级分类'))->options($cat_arr)->required();
+        $form->image('logo', __('分类LOGO'))->thumbnail('small', $width = 50, $height = 50);
+        $form->select('parent_id', __('父级分类'))->options(BlogCategoryModel::selectOptions())->required();
         $form->hidden('level', __('分类级别'))->default(1);
 
         return $form;
