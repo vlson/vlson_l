@@ -58,7 +58,6 @@ class ArticleController extends AdminController
         $show->field('content', __('内容'));
         $show->field('like_num', __('点赞数'));
         $show->field('read_num', __('阅读数'));
-        $show->field('is_deleted', __('是否删除'));
         $show->field('created_at', __('创建时间'));
         $show->field('updated_at', __('更新时间'));
 
@@ -78,7 +77,6 @@ class ArticleController extends AdminController
         $form->textarea('summary', __('摘要'));
         $form->image('cover', __('封面'))->default('https://vlson.oss-cn-beijing.aliyuncs.com/site背景.jpg');
         $form->textarea('content', __('内容'));
-        $form->switch('is_deleted', __('是否删除'))->default(1);
 
         return $form;
     }

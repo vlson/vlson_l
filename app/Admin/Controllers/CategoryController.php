@@ -109,7 +109,7 @@ class CategoryController extends AdminController
         $form = new Form(new BlogCategoryModel());
 
         $form->text('cat_name', __('分类名称'))->required();
-        $form->image('logo', __('分类LOGO'))->thumbnail('small', $width = 50, $height = 50);
+        $form->image('logo', __('分类LOGO'));
         $form->select('parent_id', __('父级分类'))->options(BlogCategoryModel::selectOptions())->required();
         $form->hidden('level', __('分类级别'))->default(1);
 

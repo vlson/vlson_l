@@ -30,7 +30,6 @@ class ArticleStaticsController extends AdminController
         $grid->column('type', __('类型'));
         $grid->column('art_id', __('文章ID'));
         $grid->column('ip', __('客户端Ip'));
-        $grid->column('is_deleted', __('是否删除'));
         $grid->column('created_at', __('创建时间'));
         $grid->column('updated_at', __('更新时间'));
 
@@ -51,7 +50,6 @@ class ArticleStaticsController extends AdminController
         $show->field('type', __('类型'));
         $show->field('art_id', __('文章ID'));
         $show->field('ip', __('客户端Ip'));
-        $show->field('is_deleted', __('是否删除'));
         $show->field('created_at', __('创建时间'));
         $show->field('updated_at', __('更新时间'));
 
@@ -70,7 +68,6 @@ class ArticleStaticsController extends AdminController
         $form->text('type', __('类型'));
         $form->number('art_id', __('文章ID'));
         $form->ip('ip', __('客户端Ip'))->default('0.0.0.0');
-        $form->switch('is_deleted', __('是否删除'))->default(1);
 
         return $form;
     }
