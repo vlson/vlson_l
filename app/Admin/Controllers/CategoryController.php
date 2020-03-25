@@ -121,7 +121,8 @@ class CategoryController extends AdminController
      * Created by lxj 2020/3/21 15:47
      * @return mixed|void
      */
-    public function store(){
+    public function store()
+    {
         // 获取form表单提交数据
         $form_param = \request()->all();
 

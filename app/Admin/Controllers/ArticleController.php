@@ -73,9 +73,11 @@ class ArticleController extends AdminController
     {
         $form = new Form(new BlogArticleModel());
 
-        $form->text('title', __('标题'));
-        $form->textarea('summary', __('摘要'));
-        $form->image('cover', __('封面'))->default('https://vlson.oss-cn-beijing.aliyuncs.com/site背景.jpg');
+        $form->text('title', __('标题'))->required();
+        $form->textarea('summary', __('摘要'))->required();
+        $form->image('cover', __('封面'));
+        $form->multipleSelect('cat_id', '博客分类')->options((new BlogArticleModel())->category());// 博客分类
+
         $form->textarea('content', __('内容'));
 
         return $form;

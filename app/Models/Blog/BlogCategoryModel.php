@@ -32,4 +32,8 @@ class BlogCategoryModel extends BasicModel
     public function childrenCategory(){
         return $this->hasMany(self::class, 'id', "parent_id");
     }
+
+    public function article(){
+        return $this->belongsToMany(BlogArticleModel::class,  (new BlogArticleCategoryModel())->getTable(), 'cat_id', 'art_id');
+    }
 }
