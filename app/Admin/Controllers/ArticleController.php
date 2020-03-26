@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Blog\BlogArticleModel;
+use App\Models\Blog\BlogCategoryModel;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -76,7 +77,7 @@ class ArticleController extends AdminController
         $form->text('title', __('标题'))->required();
         $form->textarea('summary', __('摘要'))->required();
         $form->image('cover', __('封面'));
-        $form->multipleSelect('cat_id', '博客分类')->options((new BlogArticleModel())->category());// 博客分类
+        $form->multipleSelect('cat_id', '博客分类')->options(BlogCategoryModel::all()->pluck('cat_name', 'id'));// 博客分类
 
         $form->textarea('content', __('内容'));
 
