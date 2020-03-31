@@ -79,7 +79,8 @@ class ArticleController extends AdminController
         $form->image('cover', __('封面'));
         $form->multipleSelect('cat_id', '博客分类')->options(BlogCategoryModel::all()->pluck('cat_name', 'id'));// 博客分类
 
-        $form->textarea('content', __('内容'));
+        // $form->textarea('content', __('内容'));
+        $form->wang_editor('content', __('内容'));
 
         return $form;
     }
