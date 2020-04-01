@@ -8,11 +8,11 @@ class WangEditor extends Field
     protected $view = 'admin.wang-editor';
 
     protected static $css = [
-        '/vendor/wangEditor-3.0.9/release/wangEditor.min.css',
+        '/vendor/wangEditor-3.1.1/release/wangEditor.css',
     ];
 
     protected static $js = [
-        '/vendor/wangEditor-3.0.9/release/wangEditor.min.js',
+        '/vendor/wangEditor-3.1.1/release/wangEditor.js',
     ];
 
     public function render()

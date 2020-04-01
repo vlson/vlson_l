@@ -23,4 +23,4 @@ use Encore\Admin\Form;
 
 Encore\Admin\Form::forget(['map', 'editor']);
 
-Form::extend('wang_editor', WangEditor::class);
+Form::extend('editor', WangEditor::class);
