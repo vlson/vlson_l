@@ -74,13 +74,13 @@ class ArticleController extends AdminController
     {
         $form = new Form(new BlogArticleModel());
 
+        $form->display('id', 'ID');
         $form->text('title', __('标题'))->required();
         $form->textarea('summary', __('摘要'))->required();
         $form->image('cover', __('封面'));
-        $form->multipleSelect('cat_id', '博客分类')->options(BlogCategoryModel::all()->pluck('cat_name', 'id'));// 博客分类
+        $form->multipleSelect('categories', '博客分类')->options(BlogCategoryModel::all()->pluck('cat_name', 'id'));// 博客分类
 
-        // $form->textarea('content', __('内容'));
-        $form->editor('content', __('内容'));
+        $form->editor('content', __('内容'))->required();
 
         return $form;
     }

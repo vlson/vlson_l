@@ -4,6 +4,7 @@ namespace App\Models\Blog;
 
 use App\Models\BasicModel;
 use Encore\Admin\Traits\ModelTree;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BlogCategoryModel extends BasicModel
@@ -24,16 +25,24 @@ class BlogCategoryModel extends BasicModel
         $this->setTitleColumn('cat_name');
     }
 
-    public function parentCategory(){
+    public function parentCategory()
+    {
         return $this->belongsTo(self::class, "parent_id", 'id');
     }
 
 
-    public function childrenCategory(){
+    public function childrenCategory()
+    {
         return $this->hasMany(self::class, 'id', "parent_id");
     }
 
-    public function article(){
-        return $this->belongsToMany(BlogArticleModel::class,  (new BlogArticleCategoryModel())->getTable(), 'cat_id', 'art_id');
+    /**
+     * Notes：
+     * Created by lxj 2020/4/11 15:26
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function article():BelongsToMany
+    {
+        return $this->belongsToMany(BlogArticleModel::class, (new BlogArticleCategoryModel())->getTable(), 'cat_id', 'art_id');
     }
 }
