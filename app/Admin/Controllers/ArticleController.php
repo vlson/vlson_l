@@ -8,6 +8,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends AdminController
 {
@@ -31,8 +32,7 @@ class ArticleController extends AdminController
         $grid->column('title', __('标题'));
         $grid->column('author', __('作者'));
         $grid->column('summary', __('摘要'));
-        $grid->column('cover', __('封面'));
-        $grid->column('content', __('内容'));
+        $grid->column('cover', __('封面'))->image(env('ALIYUN_OSS_ADDRESS'), 30, 30);
         $grid->column('like_num', __('点赞数'));
         $grid->column('read_num', __('阅读数'));
         $grid->column('created_at', __('创建时间'));
@@ -81,6 +81,7 @@ class ArticleController extends AdminController
 
         $form->display('id', 'ID');
         $form->text('title', __('标题'))->required();
+        $form->hidden('author')->value(Auth::guard('admin')->user()->id);
         $form->textarea('summary', __('摘要'))->required();
         $form->image('cover', __('封面'));
         $form->multipleSelect('categories', '博客分类')->options(BlogCategoryModel::all()->pluck('cat_name', 'id'));// 博客分类

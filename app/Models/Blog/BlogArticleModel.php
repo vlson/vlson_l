@@ -3,6 +3,7 @@
 namespace App\Models\Blog;
 
 use App\Models\BasicModel;
+use Encore\Admin\Auth\Database\Administrator;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class BlogArticleModel extends BasicModel
@@ -18,4 +19,9 @@ class BlogArticleModel extends BasicModel
     {
         return $this->belongsToMany(BlogCategoryModel::class, (new BlogArticleCategoryModel())->getTable(), 'art_id', 'cat_id');
     }
+
+    /*public function author()
+    {
+        return $this->hasOne(Administrator::class, 'id', 'author');
+    }*/
 }
