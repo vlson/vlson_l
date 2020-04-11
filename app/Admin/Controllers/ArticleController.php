@@ -54,6 +54,11 @@ class ArticleController extends AdminController
         $show->field('id', __('Id'));
         $show->field('title', __('标题'));
         $show->field('author', __('作者'));
+
+        $show->field('categories', '分类')->as(function ($categories) {
+            return $categories->pluck('cat_name');
+        })->label();
+
         $show->field('summary', __('摘要'));
         $show->field('cover', __('封面'));
         $show->field('content', __('内容'));
