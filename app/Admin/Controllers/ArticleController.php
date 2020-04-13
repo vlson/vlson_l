@@ -30,7 +30,7 @@ class ArticleController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('title', __('标题'));
-        $grid->column('author', __('作者'));
+        $grid->column('writer.username', __('作者'));
         $grid->column('summary', __('摘要'));
         $grid->column('cover', __('封面'))->image(env('ALIYUN_OSS_ADDRESS'), 30, 30);
         $grid->column('like_num', __('点赞数'));
