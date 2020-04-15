@@ -14,15 +14,15 @@ class BlogCategoryModel extends BasicModel
 
     protected $table = 'blog_category';
 
-    protected $dates = ['deleted_at'];
+    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
 
-        $this->setParentColumn('parent_id');
-        $this->setOrderColumn('id');
-        $this->setTitleColumn('cat_name');
+        $this->setParentColumn('parent_id'); // 父ID
+        $this->setOrderColumn('id'); // 排序
+        $this->setTitleColumn('cat_name'); // 标题
     }
 
     public function parentCategory()
