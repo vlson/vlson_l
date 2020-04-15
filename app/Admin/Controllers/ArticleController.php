@@ -82,6 +82,10 @@ class ArticleController extends AdminController
             return $categories->pluck('cat_name');
         })->label();
 
+        $show->field('labels', '标签')->as(function ($labels) {
+            return $labels->pluck('label_name');
+        })->label();
+
         $show->field('summary', __('摘要'));
         $show->field('cover', __('封面'));
         $show->field('content', __('内容'));
