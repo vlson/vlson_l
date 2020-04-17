@@ -88,7 +88,7 @@ class ArticleController extends AdminController
 
         $show->field('summary', __('摘要'));
         $show->field('cover', __('封面'));
-        $show->field('content', __('内容'));
+        $show->field('content', __('内容'))->unescape();
         $show->field('like_num', __('点赞数'));
         $show->field('read_num', __('阅读数'));
         $show->field('created_at', __('创建时间'));
