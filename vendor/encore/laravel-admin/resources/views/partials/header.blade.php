@@ -13,10 +13,10 @@
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only">切换导航</span>
         </a>
         <ul class="nav navbar-nav hidden-sm visible-lg-block">
-        {!! Admin::getNavbar()->render('left') !!}
+            {!! Admin::getNavbar()->render('left') !!}
         </ul>
 
         <!-- Navbar Right Menu -->

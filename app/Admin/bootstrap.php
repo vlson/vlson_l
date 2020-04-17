@@ -2,6 +2,7 @@
 
 use App\Admin\Extensions\WangEditor;
 use Encore\Admin\Form;
+use Encore\Admin\Facades\Admin;
 
 /**
  * Laravel-admin - admin builder based on Laravel.
@@ -23,4 +24,10 @@ use Encore\Admin\Form;
 
 Encore\Admin\Form::forget(['map', 'editor']);
 
+// wang富文本编辑器
 Form::extend('editor', WangEditor::class);
+
+// 顶部导航栏
+Admin::navbar(function(\Encore\Admin\Widgets\Navbar $navbar){
+    $navbar->left(view('admin/search-bar'));
+});
