@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Http\Controllers\Blog\Index;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+/**
+ * 博客首页
+ * add by lxj 2020-06-05
+ * Class IndexController
+ * @package App\Http\Controllers\Blog\Index
+ */
+class IndexController extends Controller
+{
+    public function index()
+    {
+        dd('一个不一样的夏天');
+    }
+}
