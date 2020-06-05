@@ -16,7 +16,7 @@ class CreateBlogArticleStaticsTable extends Migration
         Schema::create('blog_article_statics', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->string('type', 20)->default('')->nullable(false)->comment('统计类型：点赞，阅读');
+            $table->string('type', 20)->default('')->nullable(false)->comment('统计类型：点赞1，阅读2');
             $table->unsignedBigInteger('art_id')->default(0)->nullable(false)->comment('文章ID');
             $table->string('ip', 25)->default('0.0.0.0')->nullable(false)->comment('客户端IP');
 

@@ -52,7 +52,11 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://www.vlson.com'),
+    'url' => env('APP_URL', 'http://www.vlson.top'),
+    'blog_url' => env('BLOG_URL', 'http://blog.vlson.top'),
+    'matrix_url' => env('MATRIX_URL', 'http://matrix.vlson.top'),
+    'tools_url' => env('TOOLS_URL', 'http://tools.vlson.top'),
+    'shop_url' => env('SHOP_URL', 'http://shop.vlson.top'),
 
     'asset_url' => env('ASSET_URL', null),
 

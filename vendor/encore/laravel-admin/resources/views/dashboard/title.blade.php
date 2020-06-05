@@ -29,8 +29,8 @@
     微醺
 </div>
 <div class="links">
-    <a href="http://blog.vlson.com" target="_blank">博客</a>
-    <a href="http://shop.vlson.com" target="_blank">商城</a>
-    <a href="http://tools.vlson.com"  target="_blank">工具</a>
-    <a href="http://matrix.vlson.com"  target="_blank">矩阵</a>
+    <a href="{{config('app.blog_url')}}" target="_blank">博客</a>
+    <a href="{{config('app.matrix_url')}}" target="_blank">商城</a>
+    <a href="{{config('app.tools_url')}}"  target="_blank">工具</a>
+    <a href="{{config('app.shop_url')}}"  target="_blank">微矩阵</a>
 </div>
