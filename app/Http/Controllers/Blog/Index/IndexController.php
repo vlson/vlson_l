@@ -15,6 +15,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        dd('一个不一样的夏天');
+        return view('blog.index.index');
     }
 }
