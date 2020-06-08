@@ -24,4 +24,7 @@ Route::group([
     // 博客文章浏览记录
     $router->resource('blog/article-statics', ArticleStaticsController::class);
 
+    // 静态资源上传COS
+    $router->resource('tools/cos-upload', CosUploadController::class);
+
 });
