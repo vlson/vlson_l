@@ -18,6 +18,7 @@ class CreateCosResourceTable extends Migration
 
             $table->string('url', 250)->default('')->nullable(false)->comment('资源地址');
             $table->string('type', 50)->default('')->nullable(false)->comment('资源类型：image图片；css样式文件；js脚本文件；other其他');
+            $table->string('desc', 150)->default('')->nullable(true)->comment('资源描述');
 
             $table->softDeletes();
             $table->timestamps();

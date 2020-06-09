@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+$router->group(['middleware'=>[]],function () use ($router){
+    Route::get('/', 'Index\IndexController@index');
 });
