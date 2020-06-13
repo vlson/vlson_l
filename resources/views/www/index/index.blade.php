@@ -59,7 +59,7 @@
                         <div class="row">
                             <div class="col-6 con-gd">
                                 <div class="form-group">
-                                    <p>Name *</p>
+                                    <p>昵称 *</p>
                                     <input type="text" class="form-control" id="name" placeholder="" name="name" required="">
                                 </div>
                                 <div class="form-group">
@@ -70,7 +70,7 @@
                             </div>
                             <div class="col-6 con-gd">
                                 <div class="form-group">
-                                    <p>Send a Message *</p>
+                                    <p>留言 *</p>
                                     <textarea name="Message" placeholder="" required=""></textarea>
                                 </div>
 
