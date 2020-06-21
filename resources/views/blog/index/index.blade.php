@@ -26,7 +26,7 @@
             <div class="fh5co-entry padding">
                 <img src="{{$article->cover}}" alt="{{$article->title}}">
                 <div>
-                    <span class="fh5co-post-date">{{date('Y年m月d日 H点', strtotime($article->updated_at))}}</span>
+                    <span class="fh5co-post-date">{{date('Y-m-d H:m', strtotime($article->updated_at))}}</span>
                     <h2><a href="链接">{{$article->title}}</a></h2>
                     <p>{{$article->summary}}</p>
                 </div>
