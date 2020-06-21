@@ -17,4 +17,6 @@ use Illuminate\Http\Request;
 
 $router->group(['middleware'=>[]],function () use ($router){
     Route::get('/', 'Index\IndexController@index');
+
+    Route::get('/test_queue', 'Index\IndexController@testQueue');
 });

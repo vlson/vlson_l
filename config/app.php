@@ -182,7 +182,12 @@ return [
         /*
          * 阿里云OSS
          * */
-        \Jacobcyl\AliOSS\AliOssServiceProvider::class
+        \Jacobcyl\AliOSS\AliOssServiceProvider::class,
+
+        /*
+         * RabbitMQ
+         * */
+        \VladimirYuldashev\LaravelQueueRabbitMQ\LaravelQueueRabbitMQServiceProvider::class,
 
     ],
 

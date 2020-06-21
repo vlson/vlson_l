@@ -14,6 +14,7 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
+        'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
@@ -31,6 +32,7 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
     public static $prefixLengthsPsr4 = array (
         'p' => 
         array (
+            'phpseclib\\' => 10,
             'phpDocumentor\\Reflection\\' => 25,
         ),
         'X' => 
@@ -41,6 +43,10 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         array (
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
+        ),
+        'V' => 
+        array (
+            'VladimirYuldashev\\LaravelQueueRabbitMQ\\' => 39,
         ),
         'T' => 
         array (
@@ -87,6 +93,7 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
+            'PhpAmqpLib\\' => 11,
         ),
         'O' => 
         array (
@@ -115,6 +122,8 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         'I' => 
         array (
             'Intervention\\Image\\' => 19,
+            'Interop\\Queue\\' => 14,
+            'Interop\\Amqp\\' => 13,
             'Illuminate\\' => 11,
         ),
         'G' => 
@@ -128,6 +137,8 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         ),
         'E' => 
         array (
+            'Enqueue\\AmqpTools\\' => 18,
+            'Enqueue\\AmqpLib\\' => 16,
             'Encore\\Admin\\' => 13,
             'Egulias\\EmailValidator\\' => 23,
         ),
@@ -159,6 +170,10 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
     );
 
     public static $prefixDirsPsr4 = array (
+        'phpseclib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
@@ -176,6 +191,10 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'VladimirYuldashev\\LaravelQueueRabbitMQ\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vladimir-yuldashev/laravel-queue-rabbitmq/src',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -313,6 +332,10 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
+        'PhpAmqpLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib',
+        ),
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
@@ -353,6 +376,14 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         array (
             0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
         ),
+        'Interop\\Queue\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/queue-interop/queue-interop/src',
+        ),
+        'Interop\\Amqp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/queue-interop/amqp-interop/src',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -368,6 +399,14 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
+        'Enqueue\\AmqpTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/amqp-tools',
+        ),
+        'Enqueue\\AmqpLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/amqp-lib',
         ),
         'Encore\\Admin\\' => 
         array (
@@ -453,8 +492,10 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         'App\\Admin\\Controllers\\ArticleStaticsController' => __DIR__ . '/../..' . '/app/Admin/Controllers/ArticleStaticsController.php',
         'App\\Admin\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Admin/Controllers/AuthController.php',
         'App\\Admin\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Admin/Controllers/CategoryController.php',
+        'App\\Admin\\Controllers\\CosUploadController' => __DIR__ . '/../..' . '/app/Admin/Controllers/CosUploadController.php',
         'App\\Admin\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Admin/Controllers/HomeController.php',
         'App\\Admin\\Controllers\\LabelController' => __DIR__ . '/../..' . '/app/Admin/Controllers/LabelController.php',
+        'App\\Admin\\Extensions\\WangEditor' => __DIR__ . '/../..' . '/app/Admin/Extensions/WangEditor.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -462,7 +503,9 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\Blog\\Index\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Blog/Index/IndexController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Www\\Index\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Www/Index/IndexController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -478,11 +521,13 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         'App\\Models\\Blog\\BlogArticleStaticsModel' => __DIR__ . '/../..' . '/app/Models/Blog/BlogArticleStaticsModel.php',
         'App\\Models\\Blog\\BlogCategoryModel' => __DIR__ . '/../..' . '/app/Models/Blog/BlogCategoryModel.php',
         'App\\Models\\Blog\\BlogLabelModel' => __DIR__ . '/../..' . '/app/Models/Blog/BlogLabelModel.php',
+        'App\\Models\\Blog\\CosResourceModel' => __DIR__ . '/../..' . '/app/Models/Blog/CosResourceModel.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Traits\\PaginationTransform' => __DIR__ . '/../..' . '/app/Traits/PaginationTransform.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
@@ -1299,6 +1344,21 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         'Encore\\Admin\\Widgets\\Tab' => __DIR__ . '/..' . '/encore/laravel-admin/src/Widgets/Tab.php',
         'Encore\\Admin\\Widgets\\Table' => __DIR__ . '/..' . '/encore/laravel-admin/src/Widgets/Table.php',
         'Encore\\Admin\\Widgets\\Widget' => __DIR__ . '/..' . '/encore/laravel-admin/src/Widgets/Widget.php',
+        'Enqueue\\AmqpLib\\AmqpConnectionFactory' => __DIR__ . '/..' . '/enqueue/amqp-lib/AmqpConnectionFactory.php',
+        'Enqueue\\AmqpLib\\AmqpConsumer' => __DIR__ . '/..' . '/enqueue/amqp-lib/AmqpConsumer.php',
+        'Enqueue\\AmqpLib\\AmqpContext' => __DIR__ . '/..' . '/enqueue/amqp-lib/AmqpContext.php',
+        'Enqueue\\AmqpLib\\AmqpProducer' => __DIR__ . '/..' . '/enqueue/amqp-lib/AmqpProducer.php',
+        'Enqueue\\AmqpLib\\Buffer' => __DIR__ . '/..' . '/enqueue/amqp-lib/Buffer.php',
+        'Enqueue\\AmqpLib\\StopBasicConsumptionException' => __DIR__ . '/..' . '/enqueue/amqp-lib/StopBasicConsumptionException.php',
+        'Enqueue\\AmqpTools\\ConnectionConfig' => __DIR__ . '/..' . '/enqueue/amqp-tools/ConnectionConfig.php',
+        'Enqueue\\AmqpTools\\DelayStrategy' => __DIR__ . '/..' . '/enqueue/amqp-tools/DelayStrategy.php',
+        'Enqueue\\AmqpTools\\DelayStrategyAware' => __DIR__ . '/..' . '/enqueue/amqp-tools/DelayStrategyAware.php',
+        'Enqueue\\AmqpTools\\DelayStrategyAwareTrait' => __DIR__ . '/..' . '/enqueue/amqp-tools/DelayStrategyAwareTrait.php',
+        'Enqueue\\AmqpTools\\DelayStrategyTransportFactoryTrait' => __DIR__ . '/..' . '/enqueue/amqp-tools/DelayStrategyTransportFactoryTrait.php',
+        'Enqueue\\AmqpTools\\RabbitMqDelayPluginDelayStrategy' => __DIR__ . '/..' . '/enqueue/amqp-tools/RabbitMqDelayPluginDelayStrategy.php',
+        'Enqueue\\AmqpTools\\RabbitMqDlxDelayStrategy' => __DIR__ . '/..' . '/enqueue/amqp-tools/RabbitMqDlxDelayStrategy.php',
+        'Enqueue\\AmqpTools\\SignalSocketHelper' => __DIR__ . '/..' . '/enqueue/amqp-tools/SignalSocketHelper.php',
+        'Enqueue\\AmqpTools\\SubscriptionConsumer' => __DIR__ . '/..' . '/enqueue/amqp-tools/SubscriptionConsumer.php',
         'Faker\\Calculator\\Ean' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Ean.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Inn' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Inn.php',
@@ -2673,6 +2733,37 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'Interop\\Amqp\\AmqpBind' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/AmqpBind.php',
+        'Interop\\Amqp\\AmqpConnectionFactory' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/AmqpConnectionFactory.php',
+        'Interop\\Amqp\\AmqpConsumer' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/AmqpConsumer.php',
+        'Interop\\Amqp\\AmqpContext' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/AmqpContext.php',
+        'Interop\\Amqp\\AmqpDestination' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/AmqpDestination.php',
+        'Interop\\Amqp\\AmqpMessage' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/AmqpMessage.php',
+        'Interop\\Amqp\\AmqpProducer' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/AmqpProducer.php',
+        'Interop\\Amqp\\AmqpQueue' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/AmqpQueue.php',
+        'Interop\\Amqp\\AmqpTopic' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/AmqpTopic.php',
+        'Interop\\Amqp\\Impl\\AmqpBind' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/Impl/AmqpBind.php',
+        'Interop\\Amqp\\Impl\\AmqpMessage' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/Impl/AmqpMessage.php',
+        'Interop\\Amqp\\Impl\\AmqpQueue' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/Impl/AmqpQueue.php',
+        'Interop\\Amqp\\Impl\\AmqpTopic' => __DIR__ . '/..' . '/queue-interop/amqp-interop/src/Impl/AmqpTopic.php',
+        'Interop\\Queue\\DeliveryDelayNotSupportedException' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/DeliveryDelayNotSupportedException.php',
+        'Interop\\Queue\\Exception' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/Exception.php',
+        'Interop\\Queue\\ExceptionInterface' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/ExceptionInterface.php',
+        'Interop\\Queue\\InvalidDestinationException' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/InvalidDestinationException.php',
+        'Interop\\Queue\\InvalidMessageException' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/InvalidMessageException.php',
+        'Interop\\Queue\\PriorityNotSupportedException' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/PriorityNotSupportedException.php',
+        'Interop\\Queue\\PsrConnectionFactory' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/PsrConnectionFactory.php',
+        'Interop\\Queue\\PsrConsumer' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/PsrConsumer.php',
+        'Interop\\Queue\\PsrContext' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/PsrContext.php',
+        'Interop\\Queue\\PsrDestination' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/PsrDestination.php',
+        'Interop\\Queue\\PsrMessage' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/PsrMessage.php',
+        'Interop\\Queue\\PsrProcessor' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/PsrProcessor.php',
+        'Interop\\Queue\\PsrProducer' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/PsrProducer.php',
+        'Interop\\Queue\\PsrQueue' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/PsrQueue.php',
+        'Interop\\Queue\\PsrSubscriptionConsumer' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/PsrSubscriptionConsumer.php',
+        'Interop\\Queue\\PsrSubscriptionConsumerAwareContext' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/PsrSubscriptionConsumerAwareContext.php',
+        'Interop\\Queue\\PsrTopic' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/PsrTopic.php',
+        'Interop\\Queue\\TimeToLiveNotSupportedException' => __DIR__ . '/..' . '/queue-interop/queue-interop/src/TimeToLiveNotSupportedException.php',
         'Intervention\\Image\\AbstractColor' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/AbstractColor.php',
         'Intervention\\Image\\AbstractDecoder' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/AbstractDecoder.php',
         'Intervention\\Image\\AbstractDriver' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/AbstractDriver.php',
@@ -3575,6 +3666,68 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         'PharIo\\Version\\VersionConstraintParser' => __DIR__ . '/..' . '/phar-io/version/src/VersionConstraintParser.php',
         'PharIo\\Version\\VersionConstraintValue' => __DIR__ . '/..' . '/phar-io/version/src/VersionConstraintValue.php',
         'PharIo\\Version\\VersionNumber' => __DIR__ . '/..' . '/phar-io/version/src/VersionNumber.php',
+        'PhpAmqpLib\\Channel\\AMQPChannel' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php',
+        'PhpAmqpLib\\Channel\\AbstractChannel' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php',
+        'PhpAmqpLib\\Connection\\AMQPConnection' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPConnection.php',
+        'PhpAmqpLib\\Connection\\AMQPLazyConnection' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPLazyConnection.php',
+        'PhpAmqpLib\\Connection\\AMQPLazySocketConnection' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPLazySocketConnection.php',
+        'PhpAmqpLib\\Connection\\AMQPSSLConnection' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPSSLConnection.php',
+        'PhpAmqpLib\\Connection\\AMQPSocketConnection' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPSocketConnection.php',
+        'PhpAmqpLib\\Connection\\AMQPStreamConnection' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPStreamConnection.php',
+        'PhpAmqpLib\\Connection\\AbstractConnection' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php',
+        'PhpAmqpLib\\Exception\\AMQPBasicCancelException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPBasicCancelException.php',
+        'PhpAmqpLib\\Exception\\AMQPChannelClosedException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPChannelClosedException.php',
+        'PhpAmqpLib\\Exception\\AMQPChannelException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPChannelException.php',
+        'PhpAmqpLib\\Exception\\AMQPConnectionBlockedException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPConnectionBlockedException.php',
+        'PhpAmqpLib\\Exception\\AMQPConnectionClosedException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPConnectionClosedException.php',
+        'PhpAmqpLib\\Exception\\AMQPConnectionException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPConnectionException.php',
+        'PhpAmqpLib\\Exception\\AMQPDataReadException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPDataReadException.php',
+        'PhpAmqpLib\\Exception\\AMQPEmptyDeliveryTagException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPEmptyDeliveryTagException.php',
+        'PhpAmqpLib\\Exception\\AMQPException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPException.php',
+        'PhpAmqpLib\\Exception\\AMQPExceptionInterface' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPExceptionInterface.php',
+        'PhpAmqpLib\\Exception\\AMQPHeartbeatMissedException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPHeartbeatMissedException.php',
+        'PhpAmqpLib\\Exception\\AMQPIOException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPIOException.php',
+        'PhpAmqpLib\\Exception\\AMQPIOWaitException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPIOWaitException.php',
+        'PhpAmqpLib\\Exception\\AMQPInvalidArgumentException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPInvalidArgumentException.php',
+        'PhpAmqpLib\\Exception\\AMQPInvalidFrameException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPInvalidFrameException.php',
+        'PhpAmqpLib\\Exception\\AMQPLogicException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPLogicException.php',
+        'PhpAmqpLib\\Exception\\AMQPNoDataException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPNoDataException.php',
+        'PhpAmqpLib\\Exception\\AMQPNotImplementedException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPNotImplementedException.php',
+        'PhpAmqpLib\\Exception\\AMQPOutOfBoundsException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPOutOfBoundsException.php',
+        'PhpAmqpLib\\Exception\\AMQPOutOfRangeException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPOutOfRangeException.php',
+        'PhpAmqpLib\\Exception\\AMQPProtocolChannelException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPProtocolChannelException.php',
+        'PhpAmqpLib\\Exception\\AMQPProtocolConnectionException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPProtocolConnectionException.php',
+        'PhpAmqpLib\\Exception\\AMQPProtocolException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPProtocolException.php',
+        'PhpAmqpLib\\Exception\\AMQPRuntimeException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPRuntimeException.php',
+        'PhpAmqpLib\\Exception\\AMQPSocketException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPSocketException.php',
+        'PhpAmqpLib\\Exception\\AMQPTimeoutException' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exception/AMQPTimeoutException.php',
+        'PhpAmqpLib\\Exchange\\AMQPExchangeType' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Exchange/AMQPExchangeType.php',
+        'PhpAmqpLib\\Helper\\Assert' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Helper/Assert.php',
+        'PhpAmqpLib\\Helper\\DebugHelper' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Helper/DebugHelper.php',
+        'PhpAmqpLib\\Helper\\MiscHelper' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Helper/MiscHelper.php',
+        'PhpAmqpLib\\Helper\\Protocol\\MethodMap080' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Helper/Protocol/MethodMap080.php',
+        'PhpAmqpLib\\Helper\\Protocol\\MethodMap091' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Helper/Protocol/MethodMap091.php',
+        'PhpAmqpLib\\Helper\\Protocol\\Protocol080' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Helper/Protocol/Protocol080.php',
+        'PhpAmqpLib\\Helper\\Protocol\\Protocol091' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Helper/Protocol/Protocol091.php',
+        'PhpAmqpLib\\Helper\\Protocol\\Wait080' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Helper/Protocol/Wait080.php',
+        'PhpAmqpLib\\Helper\\Protocol\\Wait091' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Helper/Protocol/Wait091.php',
+        'PhpAmqpLib\\Helper\\SocketConstants' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Helper/SocketConstants.php',
+        'PhpAmqpLib\\Message\\AMQPMessage' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Message/AMQPMessage.php',
+        'PhpAmqpLib\\Package' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Package.php',
+        'PhpAmqpLib\\Wire\\AMQPAbstractCollection' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPAbstractCollection.php',
+        'PhpAmqpLib\\Wire\\AMQPArray' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPArray.php',
+        'PhpAmqpLib\\Wire\\AMQPDecimal' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPDecimal.php',
+        'PhpAmqpLib\\Wire\\AMQPReader' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPReader.php',
+        'PhpAmqpLib\\Wire\\AMQPTable' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPTable.php',
+        'PhpAmqpLib\\Wire\\AMQPWriter' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPWriter.php',
+        'PhpAmqpLib\\Wire\\AbstractClient' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AbstractClient.php',
+        'PhpAmqpLib\\Wire\\Constants' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/Constants.php',
+        'PhpAmqpLib\\Wire\\Constants080' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/Constants080.php',
+        'PhpAmqpLib\\Wire\\Constants091' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/Constants091.php',
+        'PhpAmqpLib\\Wire\\GenericContent' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/GenericContent.php',
+        'PhpAmqpLib\\Wire\\IO\\AbstractIO' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/AbstractIO.php',
+        'PhpAmqpLib\\Wire\\IO\\SocketIO' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/SocketIO.php',
+        'PhpAmqpLib\\Wire\\IO\\StreamIO' => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php',
         'PhpOption\\LazyOption' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/LazyOption.php',
         'PhpOption\\None' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/None.php',
         'PhpOption\\Option' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/Option.php',
@@ -4953,6 +5106,10 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'VladimirYuldashev\\LaravelQueueRabbitMQ\\LaravelQueueRabbitMQServiceProvider' => __DIR__ . '/..' . '/vladimir-yuldashev/laravel-queue-rabbitmq/src/LaravelQueueRabbitMQServiceProvider.php',
+        'VladimirYuldashev\\LaravelQueueRabbitMQ\\Queue\\Connectors\\RabbitMQConnector' => __DIR__ . '/..' . '/vladimir-yuldashev/laravel-queue-rabbitmq/src/Queue/Connectors/RabbitMQConnector.php',
+        'VladimirYuldashev\\LaravelQueueRabbitMQ\\Queue\\Jobs\\RabbitMQJob' => __DIR__ . '/..' . '/vladimir-yuldashev/laravel-queue-rabbitmq/src/Queue/Jobs/RabbitMQJob.php',
+        'VladimirYuldashev\\LaravelQueueRabbitMQ\\Queue\\RabbitMQQueue' => __DIR__ . '/..' . '/vladimir-yuldashev/laravel-queue-rabbitmq/src/Queue/RabbitMQQueue.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',
@@ -5043,6 +5200,30 @@ class ComposerStaticInit5d906bc3abbde4401c3bf9f1139ccbb3
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+        'phpseclib\\Crypt\\AES' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',
+        'phpseclib\\Crypt\\Base' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/Base.php',
+        'phpseclib\\Crypt\\Blowfish' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/Blowfish.php',
+        'phpseclib\\Crypt\\DES' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/DES.php',
+        'phpseclib\\Crypt\\Hash' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/Hash.php',
+        'phpseclib\\Crypt\\RC2' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/RC2.php',
+        'phpseclib\\Crypt\\RC4' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/RC4.php',
+        'phpseclib\\Crypt\\RSA' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/RSA.php',
+        'phpseclib\\Crypt\\Random' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/Random.php',
+        'phpseclib\\Crypt\\Rijndael' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/Rijndael.php',
+        'phpseclib\\Crypt\\TripleDES' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/TripleDES.php',
+        'phpseclib\\Crypt\\Twofish' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/Twofish.php',
+        'phpseclib\\File\\ANSI' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/File/ANSI.php',
+        'phpseclib\\File\\ASN1' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/File/ASN1.php',
+        'phpseclib\\File\\ASN1\\Element' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/File/ASN1/Element.php',
+        'phpseclib\\File\\X509' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/File/X509.php',
+        'phpseclib\\Math\\BigInteger' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Math/BigInteger.php',
+        'phpseclib\\Net\\SCP' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Net/SCP.php',
+        'phpseclib\\Net\\SFTP' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Net/SFTP.php',
+        'phpseclib\\Net\\SFTP\\Stream' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Net/SFTP/Stream.php',
+        'phpseclib\\Net\\SSH1' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Net/SSH1.php',
+        'phpseclib\\Net\\SSH2' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Net/SSH2.php',
+        'phpseclib\\System\\SSH\\Agent' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/System/SSH/Agent.php',
+        'phpseclib\\System\\SSH\\Agent\\Identity' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/System/SSH/Agent/Identity.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
