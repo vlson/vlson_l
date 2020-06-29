@@ -7,7 +7,7 @@
 <div class="fh5co-loader"></div>
 
 <div id="page">
-    <div id="fh5co-aside" style="background-image: url(https://vlson.oss-cn-beijing.aliyuncs.com/vlson_l/2020-06-13/green-wheat-field-4507967.jpg)">
+    <div id="fh5co-aside" style="background-image: url(	https://vlson.oss-cn-beijing.aliyuncs.com/vlson_l/2020-06-23/woman-wearing-white-mesh-top-2982149.jpg)">
         <div class="overlay"></div>
         <nav role="navigation">
             <ul>
@@ -27,7 +27,7 @@
                 <img src="{{$article->cover}}" alt="{{$article->title}}">
                 <div>
                     <span class="fh5co-post-date">{{date('Y-m-d H:m', strtotime($article->updated_at))}}</span>
-                    <h2><a href="链接">{{$article->title}}</a></h2>
+                    <h2><a href="{{config('app.blog_url').'/article/'.$article->id}}">{{$article->title}}</a></h2>
                     <p>{{$article->summary}}</p>
                 </div>
             </div>

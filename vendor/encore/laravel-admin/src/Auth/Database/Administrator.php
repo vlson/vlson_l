@@ -2,6 +2,7 @@
 
 namespace Encore\Admin\Auth\Database;
 
+use App\Models\Blog\BlogArticleModel;
 use Encore\Admin\Traits\DefaultDatetimeFormat;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -88,5 +89,10 @@ class Administrator extends Model implements AuthenticatableContract
         $relatedModel = config('admin.database.permissions_model');
 
         return $this->belongsToMany($relatedModel, $pivotTable, 'user_id', 'permission_id');
+    }
+
+    public function articles():HasMany
+    {
+        return $this->hasMany(BlogArticleModel::class,'id', 'author');
     }
 }

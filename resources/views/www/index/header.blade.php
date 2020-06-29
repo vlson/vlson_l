@@ -40,8 +40,8 @@
         }
 
         .gal-img>a>.img-fluid{
-            width: 400px;
-            height: 250px;
+            width: 90%;
+            height: 50%;
             margin: 12px;
             border-radius: 12px;
         }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Blog\Index;
+namespace App\Http\Controllers\Blog;
 
 use App\Jobs\Queue;
 use App\Models\Blog\BlogArticleModel;
@@ -12,7 +12,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $limit = 1;
+        $limit = 5;
         $articleList = BlogArticleModel::query()
             ->select(['id', 'title', 'summary', 'cover', 'updated_at'])
             ->where(['deleted_at'=>null])->orderByDesc('updated_at')->paginate($limit);

@@ -7,6 +7,7 @@ use Encore\Admin\Auth\Database\Administrator;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Mockery\Exception;
 
 class BlogArticleModel extends BasicModel
 {
@@ -42,6 +43,18 @@ class BlogArticleModel extends BasicModel
      */
     public function writer(): BelongsTo
     {
-        return $this->belongsTo(Administrator::class, 'author');
+        return $this->belongsTo('Encore\Admin\Auth\Database\Administrator', 'id');
+    }
+
+    protected static function getArticle($article_id)
+    {
+        $article = self::query()
+            ->select(['id', 'title', 'summary', 'cover', 'content', 'like_num', 'read_num', 'updated_at'])
+            ->where(['blog_article.id'=>$article_id])
+            ->with('labels')
+            ->with('categories')
+            ->with('writer:id,name')
+            ->first()->toArray();
+        return $article;
     }
 }
