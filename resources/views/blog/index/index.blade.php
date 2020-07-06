@@ -24,7 +24,7 @@
 
             @foreach($articleList as $article)
             <div class="fh5co-entry padding">
-                <img src="{{$article->cover}}" alt="{{$article->title}}">
+                <img src="{{imageDomainStitching($article->cover)}}" alt="{{$article->title}}">
                 <div>
                     <span class="fh5co-post-date">{{date('Y-m-d H:m', strtotime($article->updated_at))}}</span>
                     <h2><a href="{{config('app.blog_url').'/article/'.$article->id}}">{{$article->title}}</a></h2>
@@ -33,12 +33,10 @@
             </div>
             @endforeach
 
-                {{ $articleList->links() }}
+            {{ $articleList->links() }}
 
             <footer>
-                <div>
-                    Copyright ©{{date("Y")}}~至今 微醺 <a href="{{config('app.url')}}"> {{config('app.url')}}</a>
-                </div>
+                @include('footer')
             </footer>
         </div>
     </div>
@@ -47,19 +45,6 @@
 <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 </div>
-
-<!-- jQuery -->
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-<!-- Bootstrap -->
-<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="https://cdn.bootcdn.net/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
-<!-- Stellar Parallax -->
-<script src="https://cdn.bootcdn.net/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"></script>
-<!-- Main -->
-<script src="https://vlson.oss-cn-beijing.aliyuncs.com/vlson_l/2020-06-10/blog.main.js"></script>
 
 </body>
 </html>

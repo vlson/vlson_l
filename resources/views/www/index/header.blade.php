@@ -1,5 +1,5 @@
 <head>
-    <title>VLSON | 微醺</title>
+    <title>VLSON-微醺</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />

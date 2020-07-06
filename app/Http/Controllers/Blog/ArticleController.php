@@ -20,6 +20,7 @@ class ArticleController extends Controller
             return redirect('/');
         }
 
-        view('blog.article.detail', ['article'=>$article]);
+        //dd($article);
+        return view('blog.article.detail', ['article'=>$article]);
     }
 }

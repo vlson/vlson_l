@@ -90,7 +90,7 @@
         </div>
     </div>
 
-    @include('www.index.footer')
+    @include('footer')
 </div>
 <!--//main-content-->
 

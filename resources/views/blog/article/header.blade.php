@@ -1,11 +1,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>博客-VLSON-微醺</title>
+    <title>文章-VLSON-微醺</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="微醺的技术博客" />
-    <meta name="keywords" content="微醺,博客,vlson,Blog" />
-
+    <meta name="description" content="vlson-微醺博客文章详情" />
+    <meta name="keywords" content="文章,详情,博客,blog,VLSON,微醺" />
+    <meta name="author" content="vlson.top" />
 
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
 
@@ -40,9 +40,20 @@
     <script src="https://vlson.oss-cn-beijing.aliyuncs.com/vlson_l/2020-06-10/blog.main.js"></script>
 
     <style>
-        .pagination{
-            padding-left: 40%;
-            padding-top: 30px;
+        .label{
+            display: inline-block;
+            background: #1484e6;
+            padding: 1px 9px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+
+        .category{
+            display: inline-block;
+            background: #e47365;
+            padding: 1px 9px;
+            border: 1px solid white;
+            border-radius: 5px;
         }
     </style>
 

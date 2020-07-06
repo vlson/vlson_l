@@ -44,7 +44,8 @@
             "database/factories"
         ],
         "files" : [
-            "app/const.php"
+            "app/const.php",
+            "app/Helpers/functions.php"
         ]
     },
     "autoload-dev": {

@@ -12,7 +12,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $limit = 5;
+        $limit = 1;
         $articleList = BlogArticleModel::query()
             ->select(['id', 'title', 'summary', 'cover', 'updated_at'])
             ->where(['deleted_at'=>null])->orderByDesc('updated_at')->paginate($limit);
