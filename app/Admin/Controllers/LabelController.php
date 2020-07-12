@@ -17,7 +17,7 @@ class LabelController extends AdminController
      *
      * @var string
      */
-    protected $title = '博客标签';
+    protected $title = '博客标签-后台';
 
     /**
      * Make a grid builder.

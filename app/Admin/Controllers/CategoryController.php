@@ -17,7 +17,7 @@ class CategoryController extends AdminController
      *
      * @var string
      */
-    protected $title = '博客分类';
+    protected $title = '博客分类-后台';
 
     /**
      * Make a grid builder.

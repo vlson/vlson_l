@@ -17,7 +17,7 @@ class CosUploadController extends AdminController
      *
      * @var string
      */
-    protected $title = '静态文件上传COS';
+    protected $title = '静态文件上传COS-后台';
 
     /**
      * Make a grid builder.

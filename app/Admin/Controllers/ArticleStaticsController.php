@@ -15,7 +15,7 @@ class ArticleStaticsController extends AdminController
      *
      * @var string
      */
-    protected $title = '文章浏览统计';
+    protected $title = '文章浏览统计-后台';
 
     /**
      * Make a grid builder.
