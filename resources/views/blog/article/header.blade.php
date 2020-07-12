@@ -55,6 +55,14 @@
             border: 1px solid white;
             border-radius: 5px;
         }
+
+        .single #fh5co-aside {
+            height: 300px;
+        }
+
+        .fh5co-navigation .fh5co-cover .copy .display-t, .fh5co-navigation .fh5co-cover .copy .display-tc{
+            height: 165px;
+        }
     </style>
 
 </head>

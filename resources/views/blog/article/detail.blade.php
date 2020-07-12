@@ -24,9 +24,9 @@
 			<div class="fh5co-post">
 				<div class="fh5co-entry padding">
 					<div class="post">
-                        <h1 class="postTitle">
-                            <a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/johnson108178/p/9287101.html">{{ $article['summary'] }}</a>
-                        </h1>
+                        <h4 class="postTitle">
+                            &nbsp;&nbsp;&nbsp;&nbsp;{{ $article['summary'] }}
+                        </h4>
                         <div class="clear"></div>
                         <div class="postBody"> {{ $article['content'] }}</div>
 
