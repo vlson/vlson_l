@@ -28,7 +28,7 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;{{ $article['summary'] }}
                         </h4>
                         <div class="clear"></div>
-                        <div class="postBody"> {{ $article['content'] }}</div>
+                        <div class="postBody"> {!! $article['content'] !!}</div>
 
 					    <div class="clear"></div>
                         <div id="blog_post_info_block">
