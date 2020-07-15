@@ -42,18 +42,20 @@
     <style>
         .label{
             display: inline-block;
-            background: #1484e6;
+            background: #ffc107;
             padding: 1px 9px;
             border: 1px solid white;
             border-radius: 5px;
+            color: white !important;
         }
 
         .category{
             display: inline-block;
-            background: #e47365;
+            background: #17a2b8;
             padding: 1px 9px;
             border: 1px solid white;
             border-radius: 5px;
+            color: white !important;
         }
 
         .single #fh5co-aside {
@@ -62,6 +64,10 @@
 
         .fh5co-navigation .fh5co-cover .copy .display-t, .fh5co-navigation .fh5co-cover .copy .display-tc{
             height: 165px;
+        }
+
+        #BlogPostCategory{
+            padding-bottom: 15px;
         }
     </style>
 

@@ -43,7 +43,7 @@ class BlogArticleModel extends BasicModel
      */
     public function writer(): BelongsTo
     {
-        return $this->belongsTo('Encore\Admin\Auth\Database\Administrator', 'id');
+        return $this->belongsTo('Encore\Admin\Auth\Database\Administrator', 'author');
     }
 
     protected static function getArticle($article_id)

@@ -63,7 +63,7 @@
 				<div class="display-t">
 					<div class="display-tc">
 						<div>
-							<span>Previous Post</span>
+							<span>上一篇</span>
 							<h2>How to be an affective web developer</h2>
 						</div>
 					</div>
@@ -77,7 +77,7 @@
 				<div class="display-t">
 					<div class="display-tc">
 						<div>
-							<span>Next Post</span>
+							<span>下一篇</span>
 							<h2>How to be an affective web developer</h2>
 						</div>
 					</div>
