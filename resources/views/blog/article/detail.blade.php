@@ -16,7 +16,11 @@
 			</nav>
 			<div class="page-title">
 				<img src="https://vlson.oss-cn-beijing.aliyuncs.com/vlson_l/common/blog-icons.png" alt="{{ $article['writer']['name'] }}">
-				<span>{{ $article['updated_at'] }}</span>
+				<span>
+                    {{ $article['updated_at'] }}
+                    | 👁 {{ $article['read_num'] }}
+                    ♥ 0
+                </span>
 				<h2>{{ $article['title'] }}</h2>
 			</div>
 		</div>
@@ -56,29 +60,29 @@
     </div>
 
 	<div class="fh5co-navigation">
-		<div class="fh5co-cover prev fh5co-cover-sm" style="background-image: url(images/project-4.jpg)">
+		<div class="fh5co-cover prev fh5co-cover-sm" style="background-image: url({{ isset($article['prev']['cover']) ? imageDomainStitching($article['prev']['cover']) : '' }})">
 			<div class="overlay"></div>
 
-			<a class="copy" href="#">
+			<a class="copy" href="{{ $article['prev']['id'] ?? '#' }}">
 				<div class="display-t">
 					<div class="display-tc">
 						<div>
 							<span>上一篇</span>
-							<h2>How to be an affective web developer</h2>
+							<h2>{{ $article['prev']['title'] ?? '到天涯了！' }}</h2>
 						</div>
 					</div>
 				</div>
 			</a>
 
 		</div>
-		<div class="fh5co-cover next fh5co-cover-sm" style="background-image: url(images/project-5.jpg)">
+		<div class="fh5co-cover next fh5co-cover-sm" style="background-image: url({{ isset($article['next']['cover']) ? imageDomainStitching($article['next']['cover']) : '' }})">
 			<div class="overlay"></div>
-			<a class="copy" href="#">
+			<a class="copy" href="{{ $article['next']['id'] ?? '#' }}">
 				<div class="display-t">
 					<div class="display-tc">
 						<div>
 							<span>下一篇</span>
-							<h2>How to be an affective web developer</h2>
+							<h2>{{ $article['next']['title'] ?? '到海角了！' }}</h2>
 						</div>
 					</div>
 				</div>

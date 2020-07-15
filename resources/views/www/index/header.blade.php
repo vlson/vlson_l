@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://vlson.oss-cn-beijing.aliyuncs.com/vlson_l/2020-06-09/style.css" type="text/css" media="all" />
     <!-- Style-CSS -->
     <!-- font-awesome-icons -->
-    <link href="https://vlson.oss-cn-beijing.aliyuncs.com/vlson_l/2020-06-09/font-awesome.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/fontawesome.min.css" rel="stylesheet">
     <!-- //font-awesome-icons -->
     <!-- /Fonts -->
     <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">

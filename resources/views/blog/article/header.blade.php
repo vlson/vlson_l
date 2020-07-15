@@ -7,7 +7,7 @@
     <meta name="keywords" content="文章,详情,博客,blog,VLSON,微醺" />
     <meta name="author" content="vlson.top" />
 
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+{{--    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">--}}
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.0/animate.css">
@@ -18,6 +18,9 @@
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="https://vlson.oss-cn-beijing.aliyuncs.com/vlson_l/2020-06-10/blog.css">
+
+    <!-- Icon style  -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/fontawesome.min.css" rel="stylesheet">
 
     <!-- Modernizr JS -->
     <script src="https://cdn.bootcdn.net/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -68,6 +71,14 @@
 
         #BlogPostCategory{
             padding-bottom: 15px;
+        }
+
+        .single #fh5co-aside .featured h2, .single #fh5co-aside nav h2, .single #fh5co-aside .page-title h2 {
+            font-size: 36px;
+        }
+
+        #fh5co-aside .page-title img {
+            margin-bottom: 20px;
         }
     </style>
 

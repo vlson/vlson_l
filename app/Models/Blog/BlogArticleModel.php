@@ -54,7 +54,26 @@ class BlogArticleModel extends BasicModel
             ->with('labels')
             ->with('categories')
             ->with('writer:id,name')
-            ->first()->toArray();
-        return $article;
+            ->first();
+
+        $article_list = [];
+        if($article){
+            $article_list = $article->toArray();
+        }
+        return $article_list;
+    }
+
+    protected static function getArticleSimple($article_id)
+    {
+        $article = self::query()
+            ->select(['id', 'title', 'cover'])
+            ->where(['blog_article.id'=>$article_id])
+            ->first();
+
+        $article_list = [];
+        if($article){
+            $article_list = $article->toArray();
+        }
+        return $article_list;
     }
 }
