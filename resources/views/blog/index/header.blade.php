@@ -33,9 +33,9 @@
     <!-- Bootstrap -->
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- Waypoints -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <script src="https://cdn.staticfile.org/waypoints/4.0.1/jquery.waypoints.js"></script>
     <!-- Stellar Parallax -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"></script>
+    <script src="https://cdn.staticfile.org/stellar.js/0.6.2/jquery.stellar.min.js"></script>
     <!-- Main -->
     <script src="https://vlson.oss-cn-beijing.aliyuncs.com/vlson_l/2020-06-10/blog.main.js"></script>
 
