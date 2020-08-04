@@ -15,16 +15,16 @@
     </script>
     <!-- //Meta tag Keywords -->
     <!-- Custom-Files -->
-    <link rel="stylesheet" href="https://vlson.oss-cn-beijing.aliyuncs.com/vlson_l/2020-06-09/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.css">
     <!-- Bootstrap-Core-CSS -->
     <link rel="stylesheet" href="https://vlson.oss-cn-beijing.aliyuncs.com/vlson_l/2020-06-09/style.css" type="text/css" media="all" />
     <!-- Style-CSS -->
     <!-- font-awesome-icons -->
-    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/fontawesome.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/5.14.0/css/fontawesome.min.css" rel="stylesheet">
     <!-- //font-awesome-icons -->
     <!-- /Fonts -->
-    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+    {{--<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">--}}
     <!-- //Fonts -->
 
     <style>
