@@ -44,6 +44,10 @@
             padding-left: 40%;
             padding-top: 30px;
         }
+        .fh5co-post .fh5co-entry > div a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
     </style>
 
 </head>
