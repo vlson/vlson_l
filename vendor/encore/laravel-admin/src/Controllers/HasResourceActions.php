@@ -23,6 +23,7 @@ trait HasResourceActions
      */
     public function store()
     {
+        //var_dump($this->form());die;
         return $this->form()->store();
     }
 

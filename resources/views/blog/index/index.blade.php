@@ -11,7 +11,7 @@
         <div class="overlay"></div>
         <nav role="navigation">
             <ul>
-                <li><a href="index.html"><i class="icon-home"></i></a></li>
+                <li><a href="{{config('app.url')}}"><i class="icon-home"></i></a></li>
             </ul>
         </nav>
         <div class="featured">

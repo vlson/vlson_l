@@ -31,3 +31,9 @@ Form::extend('editor', WangEditor::class);
 Admin::navbar(function(\Encore\Admin\Widgets\Navbar $navbar){
     $navbar->left(view('admin/search-bar'));
 });
+
+// 引入CSS文件
+// Admin::css('/packages/prettydocs/css/styles.css');
+
+// 引入JS文件
+// Admin::js('/js/admin/select-add.js');
