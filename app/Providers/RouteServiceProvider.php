@@ -35,6 +35,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        $this->mapWechatRoutes();
+
         $this->mapBlogRoutes();
 
         $this->mapApiRoutes();
@@ -76,5 +78,12 @@ class RouteServiceProvider extends ServiceProvider
         Route::domain(config('app.blog_url'))
             ->namespace($this->namespace.'\Blog')
             ->group(base_path('routes/blog.php'));
+    }
+
+    protected function mapWechatRoutes()
+    {
+        Route::domain(config('url'))
+            ->namespace($this->namespace.'\Wechat')
+            ->group(base_path('routes/wechat.php'));
     }
 }
