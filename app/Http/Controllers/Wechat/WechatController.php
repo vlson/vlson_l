@@ -13,9 +13,9 @@ class WechatController extends Controller
     public function checkSignature(Request $request)
     {
         $request_data = $request->all();
-        $signature = $request_data["signature"];
-        $timestamp = $request_data["timestamp"];
-        $nonce = $request_data["nonce"];
+        $signature = $request_data["signature"] ?? '';
+        $timestamp = $request_data["timestamp"] ?? '';
+        $nonce = $request_data["nonce"] ?? '';
 
         $token = env('WECHAT_OFFICIAL_TOKEN');
 
