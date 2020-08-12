@@ -19,6 +19,7 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        // 微信公众号不验证CsrfToken
+        'wechat/*',
     ];
 }

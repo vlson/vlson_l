@@ -16,5 +16,5 @@ use Illuminate\Http\Request;
 
 
 $router->group(['middleware'=>[]],function () use ($router){
-    Route::get('/wechat/tokenValid', 'WechatController@tokenValid');
+    Route::any('wechat/tokenValid', 'WechatController@tokenValid');
 });

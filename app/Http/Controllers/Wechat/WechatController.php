@@ -13,13 +13,13 @@ class WechatController extends Controller
     public function tokenValid(Request $request){
         $request_data = $request->all();
         if($this->checkSignature($request_data)){
-            echo $request_data['echostr']; #坑点，看下面的常见坑介绍
-            exit; #一定要停止php运行，避免产生不必要的字串符
+            return \response($request_data['echostr']);
         }
+        return \response('Not True');
     }
 
     /**
-     * Notes:
+     * Notes: 验证微信公众号Token
      * Created by lxj at 2020/8/12 22:55
      * @return int
      */
