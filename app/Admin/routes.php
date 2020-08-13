@@ -27,4 +27,7 @@ Route::group([
     // 静态资源上传COS
     $router->resource('tools/cos-upload', CosUploadController::class);
 
+    // 微信公众号
+    $router->any('wechat-official/access_token', 'WechatController@WechatOfficialAccessToken');
+
 });
