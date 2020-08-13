@@ -39,6 +39,7 @@ class WechatController extends AdminController
                 return response('获取公众号access_token出错，原因为：'.$e->getMessage());
             }
         }
-        return response('微信公众号access_token为：'.$access_token.';还剩'.$expire_time.'秒到期');
+        //return view('exception.access_token');
+        return response('微信公众号access_token为：'.$access_token."<br/>剩余到期时间为：".$expire_time.'秒');
     }
 }
