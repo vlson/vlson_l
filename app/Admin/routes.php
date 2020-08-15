@@ -27,7 +27,13 @@ Route::group([
     // 静态资源上传COS
     $router->resource('tools/cos-upload', CosUploadController::class);
 
-    // 微信公众号
+    // 微信公众号access_token
     $router->any('wechat-official/access_token', 'WechatController@WechatOfficialAccessToken');
+
+    // 微信公众号菜单查询
+    $router->any('wechat-official/menu_query', 'WechatController@WechatOfficialMenuQuery');
+
+    // 微信公众号菜单查询
+    $router->any('wechat-official/menu_set', 'WechatController@WechatOfficialMenuSet');
 
 });

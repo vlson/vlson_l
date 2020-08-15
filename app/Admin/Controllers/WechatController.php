@@ -42,4 +42,26 @@ class WechatController extends AdminController
         //return view('exception.access_token');
         return response('微信公众号access_token为：'.$access_token."<br/>剩余到期时间为：".$expire_time.'秒');
     }
+
+    /**
+     * Notes: 获取微信公众号菜单
+     * Created by lxj at 2020/8/15 21:19
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     * @throws \Exception
+     */
+    public function WechatOfficialMenuQuery(){
+        return response(WechatOfficial::getMenu());
+    }
+
+    public function WechatOfficialMenuSet(){
+        $menu_arr = config('official.menu');
+        try {
+            $menu_info = json_encode($menu_arr);
+            $set_res = WechatOfficial::setMenu($menu_info);
+        }catch (\Exception $e){
+            return response('设置公众号菜单出错，原因为：'.$e->getMessage());
+        }
+        var_dump($set_res);die;
+        return response($set_res);
+    }
 }

@@ -22,7 +22,7 @@ function imageDomainStitching($path)
  * @return bool|mixed|string
  * @throws Exception
  */
-function http_curl($url, $type='get', $res='json', $arr=''){
+function http_curl($url, $type='get', $res='', $arr=''){
     // 1.初始化
     $ch = curl_init();
     // 2.设置参数
