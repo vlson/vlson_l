@@ -14,15 +14,15 @@ function imageDomainStitching($path)
 
 /**
  * Notes: curl执行http请求
- * Created by lxj at 2020/8/13 21:59
+ * Created by lxj at 2020/8/16 13:47
  * @param $url
  * @param string $type
  * @param string $res
- * @param string $arr
+ * @param string $data
  * @return bool|mixed|string
  * @throws Exception
  */
-function http_curl($url, $type='get', $res='', $arr=''){
+function http_curl($url, $type='get', $res='', $data=''){
     // 1.初始化
     $ch = curl_init();
     // 2.设置参数
@@ -33,7 +33,7 @@ function http_curl($url, $type='get', $res='', $arr=''){
     if($type == 'post'){
         // 如果是post请求的话,设置post的一些参数
         curl_setopt($ch , CURLOPT_POST , 1);
-        curl_setopt($ch , CURLOPT_POSTFIELDS, $arr);
+        curl_setopt($ch , CURLOPT_POSTFIELDS, $data);
     }
     // 3.执行
     $result = curl_exec($ch);
