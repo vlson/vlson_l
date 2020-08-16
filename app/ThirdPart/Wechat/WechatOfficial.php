@@ -32,11 +32,6 @@ class WechatOfficial
      * Created by lxj at 2020/8/15 19:51
      */
     private static function setProperty(){
-        /*foreach (get_class_vars(self::class) as $key=>$value){
-            if(!isset(self::$$key)){
-                self::$$key = config('wechat.official.'.$key);
-            }
-        }*/
         self::$appId = config('wechat.official.appId');
         self::$appSecret = config('wechat.official.appSecret');
         self::$accessToken = self::getAccessTokenCache();
@@ -64,9 +59,10 @@ class WechatOfficial
      * Created by lxj at 2020/8/13 21:53
      */
     public static function getAccessToken(){
-        self::setProperty();
+        self::$appId = config('wechat.official.appId');
+        self::$appSecret = config('wechat.official.appSecret');
         $url ='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.self::$appId.'&secret='.self::$appSecret;
-        return http_curl($url,'get','json');
+        return http_curl($url,'get', 'json');
     }
 
     /**
