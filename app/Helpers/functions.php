@@ -33,7 +33,7 @@ function http_curl($url, $type='get', $res='', $arr=''){
     if($type == 'post'){
         // 如果是post请求的话,设置post的一些参数
         curl_setopt($ch , CURLOPT_POST , 1);
-        curl_setopt($ch , CURLOPT_POSTFIELDS, http_build_query($arr));
+        curl_setopt($ch , CURLOPT_POSTFIELDS, $arr);
     }
     // 3.执行
     $result = curl_exec($ch);
