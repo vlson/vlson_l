@@ -28,6 +28,11 @@ class WechatOfficial
     private static $accessToken;
 
     /**
+     * @var 用户自定义的微信公众号token
+     */
+    private static $token;
+
+    /**
      * Notes: 设置必要参数值
      * Created by lxj at 2020/8/15 19:51
      */
