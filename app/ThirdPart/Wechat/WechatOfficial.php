@@ -34,9 +34,40 @@ class WechatOfficial
     private static function setProperty(){
         self::$appId = config('wechat.official.appId');
         self::$appSecret = config('wechat.official.appSecret');
+        self::$token = config('wechat.official.token');
         self::$accessToken = self::getAccessTokenCache();
     }
 
+    /**
+     * Notes: 验证微信公众号Token
+     * Created by lxj at 2020/8/12 22:55
+     * @return int
+     */
+    public static function checkSignature($request_data)
+    {
+        $signature = $request_data["signature"] ?? '';
+        $timestamp = $request_data["timestamp"] ?? '';
+        $nonce = $request_data["nonce"] ?? '';
+
+        $token = env('WECHAT_OFFICIAL_TOKEN');
+
+        $tmpArr = [$token, $timestamp, $nonce];
+        sort($tmpArr, SORT_STRING);
+        $tmpStr = implode( $tmpArr );
+        $tmpStr = sha1( $tmpStr );
+
+        if( $tmpStr == $signature ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * Notes: 获取access_token
+     * Created by lxj at 2020/8/16 11:37
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
     private static function getAccessTokenCache(){
         $access_token = Redis::get('wechat_official_access_token');
         $expire_time = Redis::ttl('wechat_official_access_token');
