@@ -56,8 +56,7 @@ class WechatController extends AdminController
     public function WechatOfficialMenuSet(){
         $menu_arr = config('wechat.official.menu');
         try {
-            $menu_info = json_encode($menu_arr);
-            $set_res = WechatOfficial::setMenu($menu_info);
+            $set_res = WechatOfficial::setMenu($menu_arr);
         }catch (\Exception $e){
             return response('设置公众号菜单出错，原因为：'.$e->getMessage());
         }

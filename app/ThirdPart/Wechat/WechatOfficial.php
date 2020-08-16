@@ -119,6 +119,8 @@ class WechatOfficial
      * @param $menu_info
      * @return bool|mixed|string
      * @throws \Exception
+     * 1.自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。
+     * 2.一级菜单最多4个汉字，二级菜单最多7个汉字，多出来的部分将会以“...”代替。
      */
     public static function setMenu($menu_info){
         self::setProperty();
