@@ -27,13 +27,18 @@ function http_curl($url, $type='get', $res='', $data=''){
     $ch = curl_init();
     // 2.设置参数
     curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
     if($type == 'post'){
         // 如果是post请求的话,设置post的一些参数
-        curl_setopt($ch , CURLOPT_POST , 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+        curl_setopt($ch , CURLOPT_POST , true);
         curl_setopt($ch , CURLOPT_POSTFIELDS, $data);
+        curl_setopt ( $ch, CURLOPT_HEADER, false );
     }
     // 3.执行
     $result = curl_exec($ch);

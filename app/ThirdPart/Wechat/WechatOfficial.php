@@ -122,11 +122,15 @@ class WechatOfficial
      * 1.自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。
      * 2.一级菜单最多4个汉字，二级菜单最多7个汉字，多出来的部分将会以“...”代替。
      */
-    public static function setMenu($menu_arr){
+    public static function setMenu($menu_info){
         self::setProperty();
         $url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='.self::$accessToken;
-        return http_curl($url,'post','', http_build_query($menu_arr));
+        return http_curl($url,'post','', json_encode($menu_info, JSON_UNESCAPED_UNICODE));
     }
 
-    public static function delMenu(){}
+    public static function delMenu(){
+        self::setProperty();
+        $url = 'https://api.weixin.qq.com/cgi-bin/menu/delete?access_token='.self::$accessToken;
+        return http_curl($url,'get');
+    }
 }

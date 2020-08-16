@@ -53,12 +53,31 @@ class WechatController extends AdminController
         return response(WechatOfficial::getMenu());
     }
 
+    /**
+     * Notes: 设置微信公众号菜单
+     * Created by lxj at 2020/8/16 17:36
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
     public function WechatOfficialMenuSet(){
-        $menu_arr = config('wechat.official.menu');
+        $menu_info1 = config('wechat.official.menu');
         try {
-            $set_res = WechatOfficial::setMenu($menu_arr);
+            $set_res = WechatOfficial::setMenu($menu_info1);
         }catch (\Exception $e){
             return response('设置公众号菜单出错，原因为：'.$e->getMessage());
+        }
+        return response($set_res);
+    }
+
+    /**
+     * Notes: 删除微信公众号菜单
+     * Created by lxj at 2020/8/16 17:39
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
+    public function WechatOfficialMenuDel(){
+        try {
+            $set_res = WechatOfficial::delMenu();
+        }catch (\Exception $e){
+            return response('删除公众号菜单出错，原因为：'.$e->getMessage());
         }
         return response($set_res);
     }

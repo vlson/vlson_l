@@ -35,23 +35,24 @@ return [
                         [
                             "type" => "click",
                             "name" => "最近文章",
-                            "key" => "latest_article"
+                            "key" => "latest_article",
                         ],
                         [
                             "type" => "view",
                             "name" => "工具",
                             "key" => "tools",
-                            "url" => "http://tools.vlson.top"
+                            "url" => "http://tools.vlson.top",
                         ],
                         [
                             "type" => "view",
                             "name" => "主站",
                             "key" => "www",
-                            "url" => "http://www.vlson.top"
+                            "url" => "http://www.vlson.top",
                         ],
                     ]
                 ],
             ],
+
         ],
     ]
 ];

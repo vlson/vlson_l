@@ -33,7 +33,10 @@ Route::group([
     // 微信公众号菜单查询
     $router->any('wechat-official/menu_query', 'WechatController@WechatOfficialMenuQuery');
 
-    // 微信公众号菜单查询
+    // 微信公众号菜单设置
     $router->any('wechat-official/menu_set', 'WechatController@WechatOfficialMenuSet');
+
+    // 微信公众号菜单删除
+    $router->any('wechat-official/menu_del', 'WechatController@WechatOfficialMenuDel');
 
 });
