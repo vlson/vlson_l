@@ -128,6 +128,12 @@ class WechatOfficial
         return http_curl($url,'post','', json_encode($menu_info, JSON_UNESCAPED_UNICODE));
     }
 
+    /**
+     * Notes: 删除公众号菜单按钮
+     * Created by lxj at 2020/8/18 8:29
+     * @return bool|mixed|string
+     * @throws \Exception
+     */
     public static function delMenu(){
         self::setProperty();
         $url = 'https://api.weixin.qq.com/cgi-bin/menu/delete?access_token='.self::$accessToken;

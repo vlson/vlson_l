@@ -3,7 +3,8 @@ return [
     'official' => [
         'appId' => env('WECHAT_OFFICIAL_APPID'),
         'appSecret' => env('WECHAT_OFFICIAL_AppSecret'),
-        'appSecret' => env('WECHAT_OFFICIAL_AppSecret'),
+        'token' => env('WECHAT_OFFICIAL_TOKEN'),
+        'EncodingAESKey' => env('WECHAT_OFFICIAL_ENCODING_AES_KEY'),
         'menu' => [
             "button" => [
                 // 左侧菜单栏
