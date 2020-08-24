@@ -98,7 +98,7 @@ class WechatOfficial
         self::$appId = config('wechat.official.appId');
         self::$appSecret = config('wechat.official.appSecret');
         $url ='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.self::$appId.'&secret='.self::$appSecret;
-        return http_curl($url,'get', 'json');
+        return httpCurl($url,'get', 'json');
     }
 
     /**
@@ -110,7 +110,7 @@ class WechatOfficial
     public static function getMenu(){
         self::setProperty();
         $url = 'https://api.weixin.qq.com/cgi-bin/get_current_selfmenu_info?access_token='.self::$accessToken;
-        return http_curl($url,'get');
+        return httpCurl($url,'get');
     }
 
     /**
@@ -125,7 +125,7 @@ class WechatOfficial
     public static function setMenu($menu_info){
         self::setProperty();
         $url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='.self::$accessToken;
-        return http_curl($url,'post','', json_encode($menu_info, JSON_UNESCAPED_UNICODE));
+        return httpCurl($url,'post','', json_encode($menu_info, JSON_UNESCAPED_UNICODE));
     }
 
     /**
@@ -137,6 +137,6 @@ class WechatOfficial
     public static function delMenu(){
         self::setProperty();
         $url = 'https://api.weixin.qq.com/cgi-bin/menu/delete?access_token='.self::$accessToken;
-        return http_curl($url,'get');
+        return httpCurl($url,'get');
     }
 }

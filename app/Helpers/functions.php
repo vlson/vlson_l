@@ -22,7 +22,7 @@ function imageDomainStitching($path)
  * @return bool|mixed|string
  * @throws Exception
  */
-function http_curl($url, $type='get', $res='', $data=''){
+function httpCurl($url, $type='get', $res='', $data=''){
     // 1.初始化
     $ch = curl_init();
     // 2.设置参数
@@ -52,4 +52,17 @@ function http_curl($url, $type='get', $res='', $data=''){
         $result = json_decode($result , TRUE);
     }
     return $result;
+}
+
+
+/**
+ * Notes: xml转数组
+ * Created by lxj at 2020/8/24 10:09
+ * @param $xml
+ * @return mixed
+ */
+function xmlToArray($xml)
+{
+    //将XML转为array
+    return json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
 }

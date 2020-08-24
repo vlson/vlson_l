@@ -22,16 +22,6 @@ class WechatController extends Controller
             }
             return \response('Not True');
         }elseif ($request->isMethod("POST")){
-            /*$xml_data = '<xml>
-                            <ToUserName><![CDATA[gh_8e2807c9b3d1]]></ToUserName>
-                            <FromUserName><![CDATA[oyjnx5xfqorRKfLISVAoConaf3II]]></FromUserName>
-                            <CreateTime>1597883172</CreateTime>
-                            <MsgType><![CDATA[text]]></MsgType>
-                            <Content><![CDATA[good ]]></Content>
-                            <MsgId>22876188241113008</MsgId>
-                            <Encrypt><![CDATA[xolDz6Y+SUU91xLGSgJkhSH/zQPuV8GQ2Qru8gZ9usyllFpLBeP7OBVnxmepWSaD1bqS/ahGlcqiithYjbP87/utJsWHvUJmAoV/j9U631Se0uMfVS+27F7JigVsU/N1eKpdBpayyXT7CbR2dtFYEaEoGIMIn92tAXy2cUKAnearqSk1CGr20+vRBnOmV6tgiYKyio6+PXP0obfUQ5wgHpKFNe64wYFHLXzeszMnXGk8bg35VFwykEKAipRlMisN1dk5C25zcnpBshaXwRyoVxVqzSliJdWfBGfzkrg9bkDs0NIyX4H5iREMubRgpqagsbW9tBkDvLA6/OU8fWHOnD2Fl7eFNXMbeTooKV6P5Wi8Z3EcIbjdd243CRWe/akUwGROdjmvrzY0n/3JZgYZYtgRX58MqVcsYy8lQiCVpdo=]]></Encrypt>
-                        </xml>';*/
-
             $signature = $request_data['signature'];
             $timestamp = $request_data['timestamp'];
             $nonce = $request_data['nonce'];
@@ -55,6 +45,9 @@ class WechatController extends Controller
                 $msg = $xml_data;
                 Log::debug('明文：解密后消息为：'.$msg. "\n");
             }
+
+            $trans_data = xmlToArray($msg);
+            Log::debug('XML转ARRAY后：'.json_encode($trans_data));
         }
     }
 }
