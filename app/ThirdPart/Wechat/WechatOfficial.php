@@ -3,6 +3,8 @@
 
 namespace App\ThirdPart\Wechat;
 
+use App\ThirdPart\Wechat\Official\WXBizMsgCrypt;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redis;
 
 /**
@@ -138,5 +140,10 @@ class WechatOfficial
         self::setProperty();
         $url = 'https://api.weixin.qq.com/cgi-bin/menu/delete?access_token='.self::$accessToken;
         return httpCurl($url,'get');
+    }
+
+    public static function decryptMessage($msg_signature, $timestamp, $nonce, $xml_data, &$msg){
+        $cryptObj = new WXBizMsgCrypt(config('wechat.official.token'), config('wechat.official.EncodingAESKey'), config('wechat.official.appId'));
+        return $cryptObj->decryptMsg($msg_signature, $timestamp, $nonce, $xml_data, $msg);
     }
 }
