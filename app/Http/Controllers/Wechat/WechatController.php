@@ -102,6 +102,7 @@ class WechatController extends Controller
             $reply = $msg_data['Content'];
             $reply = str_replace('吗', '', $reply);
             $reply = str_replace('?', '!', $reply);
+            $reply = str_replace('？', '!', $reply);
             $reply = str_replace('我', '你', $reply);
             $reply = str_replace('你', '我', $reply);
 
