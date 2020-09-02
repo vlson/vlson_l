@@ -5,6 +5,7 @@ return [
         'appSecret' => env('WECHAT_OFFICIAL_AppSecret'),
         'token' => env('WECHAT_OFFICIAL_TOKEN'),
         'EncodingAESKey' => env('WECHAT_OFFICIAL_ENCODING_AES_KEY'),
+        'wechatID' => env('WECHAT_OFFICIAL_ID'),
         'menu' => [
             "button" => [
                 // 左侧菜单栏

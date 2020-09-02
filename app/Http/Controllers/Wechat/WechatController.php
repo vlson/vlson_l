@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Log;
 
 class WechatController extends Controller
 {
+    /**
+     * Notes: 接收微信服务器消息
+     * Created by lxj at 2020/8/26 14:16
+     * @param Request $request
+     * @return bool|\Illuminate\Contracts\Routing\ResponseFactory|Response
+     */
     public function tokenValid(Request $request){
         $request_data = $request->all();
         if($request->isMethod("GET")){// 1. 验证token
@@ -34,11 +40,10 @@ class WechatController extends Controller
                 $nonce = $request_data['nonce'];
 
                 $errCode = WechatOfficial::decryptMessage($msg_signature, $timestamp, $nonce, $xml_data, $msg);
-
                 if ($errCode == 0) {
                     Log::debug('密文：解密后消息为：'.$msg. "\n");
                 } else {
-                    Log::error('密文，解密出错，错误码为：'.$errCode);
+                    Log::error('密文解密出错，密文为：'.$xml_data.'，错误码为：'.$errCode);
                     return false;
                 }
             }else{// 明文模式
@@ -79,38 +84,10 @@ class WechatController extends Controller
         $persistent_data['scale'] = $msg_data['Scale'] ?? '';
         $persistent_data['label'] = $msg_data['Label'] ?? '';
         $save_res = WechatMessageModel::query()->insert($persistent_data);
-
         if(!$save_res){
             Log::error('持久化消息出错，待持久化的数据为：' . json_encode($persistent_data));
         }
 
-
-        // 人工智能算法计算回复的消息
-        $emoji_data = [
-            'o(*￣▽￣*)ブ',
-            'φ(゜▽゜*)♪',
-            '(★ ω ★)',
-            '(‾◡◝)',
-            '( *︾▽︾)',
-            '(✿◕‿◕✿)',
-            '(⓿_⓿)',
-            '( ఠൠఠ )ﾉ',
-            '（づ￣3￣）づ╭❤～'
-        ];
-        $emoji = array_rand($emoji_data)[0];
-        if($msg_data['MsgType'] == 'text'){
-            $reply = $msg_data['Content'];
-            $reply = str_replace('吗', '', $reply);
-            $reply = str_replace('?', '!', $reply);
-            $reply = str_replace('？', '!', $reply);
-            $reply = str_replace('我', '你', $reply);
-            $reply = str_replace('你', '我', $reply);
-
-            $reply .= $emoji;
-
-        }else{
-            $reply = '非常荣幸与您沟通，由于个人不能实时在线，看到消息会立即回复您!'.$emoji;
-        }
-        return $reply;
+        echo WechatOfficial::replyMsg($msg_data['FromUserName'], $msg_data['MsgType'], $msg_data['Content']);
     }
 }
