@@ -199,11 +199,11 @@ class WechatOfficial
         $reply_msg = '';
         if($msg_type == 'text'){
             $reply_msg = $msg_content ?? '你好呀，Friend.';
-            $reply_msg = str_replace(['你', '我', '吗', '?', '？', 'wo', '谢谢你',], ['我', '你', '', '!', '！', 'ni', '不客气',], $reply_msg);
+            $reply_msg = str_replace(['我', '吗', '?', '？', 'wo', '谢谢你'], ['你', '', '!', '！', 'ni', '不客气'], $reply_msg);
             $reply_msg .= $emoji;
             $reply_msg = self::makeText($open_id, $reply_msg);
         }else{
-            $reply_msg = '非常荣幸与您沟通，由于个人不能实时在线，看到消息会立即回复您!'.$emoji;
+            $reply_msg = '非常荣幸与您沟通，由于个人不能实时在线，看到消息会立即回复您!~'.$emoji;
             $reply_msg = self::makeText($open_id, $reply_msg);
         }
 
