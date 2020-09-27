@@ -205,8 +205,9 @@ class WechatOfficial
             $reply_msg = str_replace('吗', '', $reply_msg);
             $reply_msg = str_replace('?', '!', $reply_msg);
             $reply_msg = str_replace('？', '!', $reply_msg);
-            $reply_msg = str_replace('我', '你', $reply_msg);
             $reply_msg = str_replace('你', '我', $reply_msg);
+            $reply_msg = str_replace('我', '你', $reply_msg);
+            $reply_msg = str_replace('wo', 'ni', $reply_msg);
 
             $reply_msg .= $emoji;
             $reply_msg = self::makeText($open_id, $reply_msg);
