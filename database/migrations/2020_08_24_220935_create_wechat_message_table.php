@@ -22,7 +22,7 @@ class CreateWechatMessageTable extends Migration
             $table->string('msg_type', 25)->default('')->nullable(false)->comment('消息类型');
             $table->string('msg_content', 255)->default('')->nullable(true)->comment('消息内容');
             $table->string('media_id', 255)->default('')->nullable(true)->comment('消息媒体ID');
-            $table->string('pic_url', 125)->default('')->nullable(true)->comment('图片链接');
+            $table->string('pic_url', 255)->default('')->nullable(true)->comment('图片链接');
             $table->string('format', 25)->default('')->nullable(true)->comment('语音格式');
             $table->text('recognition')->comment('语音识别结果');
             $table->string('thumb_media_id', 125)->default('')->nullable(true)->comment('视频消息缩略图的媒体id');

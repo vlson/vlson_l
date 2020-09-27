@@ -69,26 +69,33 @@ class WechatController extends Controller
         Log::debug('XML转ARRAY后：'.json_encode($msg_data));
 
         // 持久化消息
-        $persistent_data = [];
-        $persistent_data['msg_id'] = $msg_data['MsgId'] ?? '';
-        $persistent_data['open_id'] = $msg_data['FromUserName'] ?? '';
-        $persistent_data['create_time'] = $msg_data['CreateTime'] ?? '';
-        $persistent_data['msg_type'] = $msg_data['MsgType'] ?? '';
-        $persistent_data['msg_content'] = $msg_data['Content'] ?? '';
-        $persistent_data['media_id'] = $msg_data['MediaId'] ?? '';
-        $persistent_data['pic_url'] = $msg_data['PicUrl'] ?? '';
-        $persistent_data['format'] = $msg_data['Format'] ?? '';
-        $persistent_data['recognition'] = $msg_data['Recognition'] ?? '';
-        $persistent_data['thumb_media_id'] = $msg_data['ThumbMediaId'] ?? '';
-        $persistent_data['location_x'] = $msg_data['Location_X'] ?? '';
-        $persistent_data['location_y'] = $msg_data['Location_Y'] ?? '';
-        $persistent_data['scale'] = $msg_data['Scale'] ?? '';
-        $persistent_data['label'] = $msg_data['Label'] ?? '';
-        $save_res = WechatMessageModel::query()->insert($persistent_data);
-        if(!$save_res){
-            Log::error('持久化消息出错，待持久化的数据为：' . json_encode($persistent_data));
+        $content = $msg_data['Content'] ?? '';
+
+        // 消息持久化重复判断
+        $is_persistence = WechatMessageModel::query()->where(['msg_id'=>$msg_data['MsgId']])->first();
+        if(!$is_persistence){
+            $persistent_data = [];
+            $persistent_data['msg_id'] = $msg_data['MsgId'] ?? '';
+            $persistent_data['open_id'] = $msg_data['FromUserName'] ?? '';
+            $persistent_data['create_time'] = $msg_data['CreateTime'] ?? '';
+            $persistent_data['msg_type'] = $msg_data['MsgType'] ?? '';
+            $persistent_data['msg_content'] = $content ?? '';
+            $persistent_data['media_id'] = $msg_data['MediaId'] ?? '';
+            $persistent_data['pic_url'] = $msg_data['PicUrl'] ?? '';
+            $persistent_data['format'] = $msg_data['Format'] ?? '';
+            $persistent_data['recognition'] = $msg_data['Recognition'] ?? '';
+            $persistent_data['thumb_media_id'] = $msg_data['ThumbMediaId'] ?? '';
+            $persistent_data['location_x'] = $msg_data['Location_X'] ?? '';
+            $persistent_data['location_y'] = $msg_data['Location_Y'] ?? '';
+            $persistent_data['scale'] = $msg_data['Scale'] ?? '';
+            $persistent_data['label'] = $msg_data['Label'] ?? '';
+            $save_res = WechatMessageModel::query()->insert($persistent_data);
+            if(!$save_res){
+                Log::error('持久化消息出错，待持久化的数据为：' . json_encode($persistent_data));
+            }
         }
 
-        echo WechatOfficial::replyMsg($msg_data['FromUserName'], $msg_data['MsgType'], $persistent_data['msg_content'], $nonce);
+        // 回复消息
+        echo WechatOfficial::replyMsg($msg_data['FromUserName'], $msg_data['MsgType'], $content, $nonce);
     }
 }
