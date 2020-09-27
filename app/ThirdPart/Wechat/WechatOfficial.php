@@ -186,15 +186,12 @@ class WechatOfficial
     public static function replyMsg($open_id, $msg_type, $msg_content = '', $nonce){
         // 人工智能算法计算回复的消息
         $emoji_data = [
-            'o(*￣▽￣*)ブ',
             'φ(゜▽゜*)♪',
             '(★ ω ★)',
             '(‾◡◝)',
-            '( *︾▽︾)',
             '(✿◕‿◕✿)',
             '(⓿_⓿)',
             '( ఠൠఠ )ﾉ',
-            '（づ￣3￣）づ╭❤～'
         ];
         $emoji = $emoji_data[array_rand($emoji_data)];
 
@@ -202,13 +199,7 @@ class WechatOfficial
         $reply_msg = '';
         if($msg_type == 'text'){
             $reply_msg = $msg_content ?? '你好呀，Friend.';
-            $reply_msg = str_replace('吗', '', $reply_msg);
-            $reply_msg = str_replace('?', '!', $reply_msg);
-            $reply_msg = str_replace('？', '!', $reply_msg);
-            $reply_msg = str_replace('你', '我', $reply_msg);
-            $reply_msg = str_replace('我', '你', $reply_msg);
-            $reply_msg = str_replace('wo', 'ni', $reply_msg);
-
+            $reply_msg = str_replace(['你', '我', '吗', '?', '？', 'wo', '谢谢你',], ['我', '你', '', '!', '！', 'ni', '不客气',], $reply_msg);
             $reply_msg .= $emoji;
             $reply_msg = self::makeText($open_id, $reply_msg);
         }else{
