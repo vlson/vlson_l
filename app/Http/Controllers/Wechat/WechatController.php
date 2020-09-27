@@ -33,11 +33,11 @@ class WechatController extends Controller
             $xml_data = file_get_contents('php://input');
 
             $msg = '';
+            $timestamp = $request_data['timestamp'];
+            $nonce = $request_data['nonce'];
             if(isset($request_data['encrypt_type'])){// 加密|兼容模式
                 //$encrypt_type = $request_data['encrypt_type'];
                 $msg_signature = $request_data['msg_signature'];
-                $timestamp = $request_data['timestamp'];
-                $nonce = $request_data['nonce'];
 
                 $errCode = WechatOfficial::decryptMessage($msg_signature, $timestamp, $nonce, $xml_data, $msg);
                 if ($errCode == 0) {
@@ -51,18 +51,19 @@ class WechatController extends Controller
                 Log::debug('明文：解密后消息为：'.$msg. "\n");
             }
 
-            $reply = $this->persistentMsgAndGetReply($msg);
+            $reply = $this->persistentMsgAndGetReply($msg, $nonce);
             Log::info('回复的消息为：' . $reply);
+            return \response($reply);
         }
     }
 
     /**
-     * Notes: 持久化消息并获取回复
-     * Created by lxj at 2020/8/25 18:01
+     * Notes:持久化消息并获取回复
+     * Created by lxj at 2020/9/27 8:32
      * @param $msg
-     * @return string|string[]
+     * @param $nonce
      */
-    private function persistentMsgAndGetReply($msg){
+    private function persistentMsgAndGetReply($msg, $nonce){
         // 消息格式：XML转数组
         $msg_data = xmlToArray($msg);
         Log::debug('XML转ARRAY后：'.json_encode($msg_data));
@@ -88,6 +89,6 @@ class WechatController extends Controller
             Log::error('持久化消息出错，待持久化的数据为：' . json_encode($persistent_data));
         }
 
-        echo WechatOfficial::replyMsg($msg_data['FromUserName'], $msg_data['MsgType'], $msg_data['Content']);
+        echo WechatOfficial::replyMsg($msg_data['FromUserName'], $msg_data['MsgType'], $msg_data['Content'], $nonce);
     }
 }

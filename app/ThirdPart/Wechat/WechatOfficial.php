@@ -166,21 +166,24 @@ class WechatOfficial
      * @param $encrypt_msg
      * @return int
      */
-    public static function encryptMessage($xml_data, $timestamp, $nonce, $encrypt_msg){
+    public static function encryptMessage($xml_data, $timestamp, $nonce){
         $cryptObj = new WXBizMsgCrypt(config('wechat.official.token'), config('wechat.official.EncodingAESKey'), config('wechat.official.appId'));
-        $timestamp = time();
-        return $cryptObj->encryptMsg($xml_data, $timestamp, $nonce, $encrypt_msg);
+        $timestamp = $timestamp ?? time();
+        $encrypt_msg = '';
+        $cryptObj->encryptMsg($xml_data, $timestamp, $nonce, $encrypt_msg);
+        return $encrypt_msg;
     }
 
     /**
-     * Notes: 回复微信公众号的消息
-     * Created by lxj at 2020/8/26 21:31
+     * Notes:生成回复微信公众号的消息体
+     * Created by lxj at 2020/9/27 8:48
      * @param $open_id
      * @param $msg_type
      * @param string $msg_content
-     * @return string
+     * @param $nonce
+     * @return int
      */
-    public static function replyMsg($open_id, $msg_type, $msg_content = ''){
+    public static function replyMsg($open_id, $msg_type, $msg_content = '', $nonce){
         // 人工智能算法计算回复的消息
         $emoji_data = [
             'o(*￣▽￣*)ブ',
@@ -212,7 +215,7 @@ class WechatOfficial
             $reply_msg = self::makeText($open_id, $reply_msg);
         }
 
-        return self::encryptMessage($reply_msg, time(), );
+        return self::encryptMessage($reply_msg, time(), $nonce);
     }
 
     /**
