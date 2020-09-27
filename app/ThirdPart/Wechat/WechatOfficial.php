@@ -201,7 +201,7 @@ class WechatOfficial
         // 拼凑回复的消息
         $reply_msg = '';
         if($msg_type == 'text'){
-            $reply_msg = $msg_content;
+            $reply_msg = $msg_content ?? '你好呀，Friend.';
             $reply_msg = str_replace('吗', '', $reply_msg);
             $reply_msg = str_replace('?', '!', $reply_msg);
             $reply_msg = str_replace('？', '!', $reply_msg);

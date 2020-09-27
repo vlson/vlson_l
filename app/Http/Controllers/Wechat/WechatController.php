@@ -89,6 +89,6 @@ class WechatController extends Controller
             Log::error('持久化消息出错，待持久化的数据为：' . json_encode($persistent_data));
         }
 
-        echo WechatOfficial::replyMsg($msg_data['FromUserName'], $msg_data['MsgType'], $msg_data['Content'], $nonce);
+        echo WechatOfficial::replyMsg($msg_data['FromUserName'], $msg_data['MsgType'], $persistent_data['msg_content'], $nonce);
     }
 }
